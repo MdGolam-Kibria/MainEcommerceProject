@@ -6,17 +6,17 @@
     <string name="open">open</string>
     <string name="close">close</string>
 
-<!--    <string-array name="recyclerItem">-->
-<!--        <item>Bags</item>-->
-<!--        <item>BodyCare</item>-->
-<!--        <item>Books</item>-->
-<!--        <item>Construction materials</item>-->
-<!--        <item>decoration</item>-->
-<!--        <item>Digital Goods</item>-->
-<!--        <item>Electric</item>-->
-<!--        <item>Event</item>-->
-<!--        <item>Woman Fashion</item>-->
-<!--        <item>Man Fashion</item>-->
-<!--        <item>Furniture</item>-->
-<!--    </string-array>-->
+    <!--    <string-array name="recyclerItem">-->
+    <!--        <item>Bags</item>-->
+    <!--        <item>BodyCare</item>-->
+    <!--        <item>Books</item>-->
+    <!--        <item>Construction materials</item>-->
+    <!--        <item>decoration</item>-->
+    <!--        <item>Digital Goods</item>-->
+    <!--        <item>Electric</item>-->
+    <!--        <item>Event</item>-->
+    <!--        <item>Woman Fashion</item>-->
+    <!--        <item>Man Fashion</item>-->
+    <!--        <item>Furniture</item>-->
+    <!--    </string-array>-->
 </resources>

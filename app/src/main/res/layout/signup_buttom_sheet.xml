@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_margin="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Register"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:orientation="horizontal">
+      <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+          android:layout_width="170dp"
+          android:layout_gravity="center_horizontal"
+          android:layout_height="wrap_content"
+          android:padding="16dp"
+          app:borderColor="#4D5151"
+          app:borderWidth="1dp"
+          app:cornerRadius="15dp">
+
+          <EditText
+              android:id="@+id/name"
+              android:imeOptions="actionNext"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#92000000"
+              android:paddingTop="5dp"
+              android:paddingLeft="10dp"
+              android:paddingBottom="5dp"
+              android:textColorHint="#4D5151"
+              android:layout_gravity="center_horizontal"
+              android:background="@drawable/foredittext"
+              android:hint="First Name"
+              />
+
+      </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+      <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+          android:layout_width="170dp"
+          android:layout_gravity="center_horizontal"
+          android:layout_height="wrap_content"
+          android:padding="16dp"
+          app:borderColor="#4D5151"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="30dp"
+          app:borderWidth="1dp"
+          app:cornerRadius="15dp">
+
+          <EditText
+              android:id="@+id/email"
+              android:imeOptions="actionNext"
+              android:layout_width="match_parent"
+              android:paddingLeft="10dp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal"
+              android:background="@drawable/foredittext"
+              android:hint="Last Name"
+              android:backgroundTint="#92000000"
+              android:textColorHint="#4D5151"
+              android:paddingTop="5dp"
+
+              android:paddingBottom="5dp" />
+      </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+  </LinearLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="370dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
+
+        <EditText
+            android:id="@+id/phone"
+            android:imeOptions="actionNext"
+            android:layout_width="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+             android:background="@drawable/foredittext"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#4D5151"
+             android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="370dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
+
+        <EditText
+            android:id="@+id/invitationCode"
+            android:imeOptions="actionNext"
+            android:layout_width="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:background="@drawable/foredittext"
+            android:hint="Invitation Code"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#4D5151"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Leave empty if you don't have invitation code"
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+    <CheckBox
+        android:id="@+id/saveLoginCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="I agree to the Privacy Policy and Trams condition of evaly"
+        android:textColor="#100C0C" />
+    <Button
+        android:id="@+id/signupBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/forbtn"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:text="Sign Up"
+        android:textAllCaps="false" />
+
+</LinearLayout>

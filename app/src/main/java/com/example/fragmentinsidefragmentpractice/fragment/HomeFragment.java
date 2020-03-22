@@ -115,7 +115,7 @@ public class HomeFragment extends Fragment {
         }
         if (position == 1) {
 
-          //  catagoriesTab.setBackgroundColor(R.color.black);
+            //  catagoriesTab.setBackgroundColor(R.color.black);
 
 //            catagoriesTab.setTextColor(R.color.tab);
 //            shopsTab.setTextColor(R.color.tab);

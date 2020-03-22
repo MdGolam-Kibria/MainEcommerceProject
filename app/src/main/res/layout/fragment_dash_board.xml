@@ -7,23 +7,24 @@
     android:layout_margin="10dp"
     android:background="#FFFFFF"
     android:gravity="center_horizontal"
+    android:id="@+id/containear"
     android:orientation="vertical"
     tools:context=".fragment.DashBoard">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImage"
         android:layout_width="170dp"
-        android:layout_marginTop="15dp"
         android:layout_height="170dp"
         android:layout_gravity="center_horizontal"
-         android:src="@drawable/icon"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/icon"
         app:civ_border_color="#4D5151"
         app:civ_border_width="2dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
@@ -44,8 +45,8 @@
                 android:background="@drawable/foredittext"
                 android:backgroundTint="#92000000"
                 android:hint="Phone"
-                android:inputType="number"
                 android:imeOptions="actionNext"
+                android:inputType="number"
                 android:paddingLeft="10dp"
                 android:textColorHint="#4D5151" />
 
@@ -74,13 +75,30 @@
                 android:textColorHint="#4D5151" />
         </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="10dp"
-            android:text="Forgot your password?"
-            android:textColor="@color/black" />
+            android:layout_marginTop="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Forgot your password?"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/saveLoginCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:text="Save Login?"
+                android:textColor="#100C0C" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/login"
@@ -99,10 +117,10 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
 
-            android:gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="2dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
