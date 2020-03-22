@@ -8,26 +8,22 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.fragmentinsidefragmentpractice.MainActivity;
 import com.example.fragmentinsidefragmentpractice.R;
-import com.example.fragmentinsidefragmentpractice.authorizationAndAuthentication.SignupBottomSHeetFragment;
+import com.example.fragmentinsidefragmentpractice.authorizationAndAuthentication.ResisterFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import static android.content.Context.MODE_PRIVATE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -84,7 +80,7 @@ public class DashBoard extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.login){
+        if (v.getId() == R.id.login) {
             String userPhone = phone.getText().toString();
             String userPassword = password.getText().toString();
             if (userPassword.isEmpty() || userPassword.length() <= 8) {
@@ -97,32 +93,20 @@ public class DashBoard extends Fragment implements View.OnClickListener {
             }
             //connect to firebase
 
-            mAuth.signInWithEmailAndPassword(userPhone, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(getContext(), "signIn Successful", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(getContext(), "signIn unsuccesfull", Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
+//            mAuth.signInWithEmailAndPassword(userPhone, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                @Override
+//                public void onComplete(@NonNull Task<AuthResult> task) {
+//                    if (task.isSuccessful()) {
+//                        Toast.makeText(getContext(), "signIn Successful", Toast.LENGTH_LONG).show();
+//                    } else {
+//                        Toast.makeText(getContext(), "signIn unsuccesfull", Toast.LENGTH_LONG).show();
+//                    }
+//                }
+//            });
         }
-        if (v.getId()==R.id.resister){
-            SignupBottomSHeetFragment signupBottomSHeetFragment = new SignupBottomSHeetFragment();
-            signupBottomSHeetFragment.show(getFragmentManager(), "signup");
+        if (v.getId() == R.id.resister) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment, new ResisterFragment(),"mm").addToBackStack(null).commit();
         }
     }
-
-
-//    FragmentManager fragmentManager = getFragmentManager();
-//    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.containear,new
-//
-//    DashBoardAfterLoginFragment(), "afterLogin").
-//
-//    addToBackStack(null).
-//
-//    commit();
-
 }

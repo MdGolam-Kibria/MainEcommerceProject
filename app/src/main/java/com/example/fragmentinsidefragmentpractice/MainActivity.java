@@ -2,15 +2,11 @@ package com.example.fragmentinsidefragmentpractice;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -26,7 +22,6 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     FrameLayout fragment;
     BottomNavigationView bottomNavigationView;
-
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navbar;
@@ -56,8 +51,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 return false;
             }
         });
-//        navbar.canScrollVertically()
-    }
+     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {//for navigationDrawer
@@ -67,11 +61,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return super.onOptionsItemSelected(item);
     }
 
-    private void repleaseFragment(Fragment fragment) {
+    public void repleaseFragment(Fragment fragment) {
         FragmentTransaction fm;
         fm = getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null);
         fm.commit();
     }
+
 
     private void findAllView() {
         fragment = findViewById(R.id.fragment);
@@ -84,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-
             case R.id.home:
                 repleaseFragment(new HomeFragment());
                 return true;
@@ -100,4 +94,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
+
+
 }

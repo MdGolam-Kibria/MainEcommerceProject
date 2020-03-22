@@ -40,4 +40,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //for edit text design
     implementation "ss.anoop:awesome-textinput-layout:1.0.0"
+    implementation 'androidx.cardview:cardview:1.0.0'
+
 }
