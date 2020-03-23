@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment {
 
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer()); //here view pager animations.
+
         catagoriesTab = view.findViewById(R.id.categories);
         brandsTab = view.findViewById(R.id.brands);
         shopsTab = view.findViewById(R.id.shops);
