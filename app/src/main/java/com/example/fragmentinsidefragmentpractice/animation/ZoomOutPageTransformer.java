@@ -9,7 +9,7 @@ public class ZoomOutPageTransformer implements ViewPager.PageTransformer {
     private static final float MIN_ALPHA = 0.5f;
 
     public void transformPage(View view, float position) {
-         int pageWidth = view.getWidth();
+        int pageWidth = view.getWidth();
         int pageHeight = view.getHeight();
 
         if (position < -1) {

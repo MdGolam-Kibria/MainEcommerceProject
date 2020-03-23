@@ -107,8 +107,8 @@ public class DashBoard extends Fragment implements View.OnClickListener {
         }
         if (v.getId() == R.id.resister) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction()
-                    .setCustomAnimations(UseUtil.changeFragmentAnimation1st,UseUtil.changeFragmentAnimation2nd,UseUtil.changeFragmentAnimation3rd,UseUtil.changeFragmentAnimation4th);
-            transaction.replace(R.id.fragment, new ResisterFragment(),"mm").addToBackStack(null).commit();
+                    .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil.changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
+            transaction.replace(R.id.fragment, new ResisterFragment(), "mm").addToBackStack(null).commit();
         }
     }
 }
