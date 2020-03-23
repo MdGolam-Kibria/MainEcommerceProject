@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.fragmentinsidefragmentpractice.MainActivity;
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.authorizationAndAuthentication.ResisterFragment;
+import com.example.fragmentinsidefragmentpractice.util.UseUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -105,7 +106,8 @@ public class DashBoard extends Fragment implements View.OnClickListener {
 //            });
         }
         if (v.getId() == R.id.resister) {
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction()
+                    .setCustomAnimations(UseUtil.changeFragmentAnimation1st,UseUtil.changeFragmentAnimation2nd,UseUtil.changeFragmentAnimation3rd,UseUtil.changeFragmentAnimation4th);
             transaction.replace(R.id.fragment, new ResisterFragment(),"mm").addToBackStack(null).commit();
         }
     }

@@ -16,6 +16,7 @@ import com.example.fragmentinsidefragmentpractice.fragment.Cart;
 import com.example.fragmentinsidefragmentpractice.fragment.DashBoard;
 import com.example.fragmentinsidefragmentpractice.fragment.HomeFragment;
 import com.example.fragmentinsidefragmentpractice.fragment.WishList;
+import com.example.fragmentinsidefragmentpractice.util.UseUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -63,10 +64,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     public void repleaseFragment(Fragment fragment) {
         FragmentTransaction fm;
-        fm = getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null);
+        fm = getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(UseUtil.changeFragmentAnimation1st,UseUtil.changeFragmentAnimation2nd,UseUtil.changeFragmentAnimation3rd,UseUtil.changeFragmentAnimation4th)
+                .replace(R.id.fragment, fragment).addToBackStack(null);
         fm.commit();
     }
-
 
     private void findAllView() {
         fragment = findViewById(R.id.fragment);
