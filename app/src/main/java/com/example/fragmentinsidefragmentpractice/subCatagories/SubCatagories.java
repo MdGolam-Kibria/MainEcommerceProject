@@ -34,8 +34,8 @@ public class SubCatagories extends AppCompatActivity {
         image.add(R.drawable.construction_material);
         image.add(R.drawable.decoration_material);
         image.add(R.drawable.digital_good);
-        image.add(R.drawable.electric);
-        image.add(R.drawable.event);
+        image.add(R.drawable.eletric);
+        image.add(R.drawable.watch_clock);
         image.add(R.drawable.woman_fashion);
         image.add(R.drawable.man_fashion);
         image.add(R.drawable.furniture);
@@ -49,7 +49,7 @@ public class SubCatagories extends AppCompatActivity {
         item.add("Decoration");
         item.add("Digital Goods");
         item.add("Electric");
-        item.add("Event");
+        item.add("Watch & Clock");
         item.add("Woman Fashion");
         item.add("Man Fashion");
         item.add("Furniture");

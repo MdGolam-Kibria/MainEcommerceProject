@@ -53,11 +53,19 @@ public class Catagories extends Fragment implements View.OnClickListener {
         image.add(R.drawable.body_care);
         image.add(R.drawable.book);
         image.add(R.drawable.glass);
+        //new
+        image.add(R.drawable.mother_kids_toys);
+        image.add(R.drawable.sports);
+        image.add(R.drawable.vehicles_parts);
+        image.add(R.drawable.home_living);
+        image.add(R.drawable.home_appliance);
+        image.add(R.drawable.grocery);
+
         image.add(R.drawable.construction_material);
         image.add(R.drawable.decoration_material);
         image.add(R.drawable.digital_good);
-        image.add(R.drawable.electric);
-        image.add(R.drawable.event);
+        image.add(R.drawable.eletric);
+        image.add(R.drawable.watch_clock);
         image.add(R.drawable.woman_fashion);
         image.add(R.drawable.man_fashion);
         image.add(R.drawable.furniture);
@@ -67,11 +75,20 @@ public class Catagories extends Fragment implements View.OnClickListener {
         item.add("BodyCare");
         item.add("Books");
         item.add("Glasses");
+//new
+        item.add(getString(R.string.motherKidsToys));
+        item.add("Sports");
+        item.add("vehicles & parts");
+        item.add("Home & Living");
+        item.add("Home Appliance");
+        item.add("Grocery");
+
+
         item.add("Construction materials");
         item.add("Decoration");
         item.add("Digital Goods");
-        item.add("Electric");
-        item.add("Event");
+        item.add("Electric & Parts");
+        item.add("Watch & Clock");
         item.add("Woman Fashion");
         item.add("Man Fashion");
         item.add("Furniture");
@@ -84,10 +101,10 @@ public class Catagories extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(getContext(), "" + item.get(position), Toast.LENGTH_SHORT).show();
-                switch (position){
+                switch (position) {
                     case 0:
                         startActivity(new Intent(getActivity(), SubCatagories.class));
-                            //  * below animation for fragment to activity.
+                        //  * below animation for fragment to activity.
                         ((Activity) getActivity()).overridePendingTransition(R.animator.enter_from_right, R.animator.exit_to_left);
                 }
             }

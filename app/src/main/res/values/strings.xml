@@ -6,6 +6,8 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="verify_phone_sms">A code has been sent to your\nnumber,please check message\nand enter here.</string>
+    <string name="motherKidsToys">Mother,Kids\n and Toys</string>
+    <string name="newCameraWorld">New Camera\nWorld</string>
 
     <string name="title_activity_sub_catagories">SubCatagories</string>
     <string name="dummy_button">Dummy Button</string>

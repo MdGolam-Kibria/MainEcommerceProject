@@ -50,14 +50,23 @@ public class Shops extends Fragment {
         shopsImage.add(R.drawable.samsung);
         shopsImage.add(R.drawable.new_camera_world);
         shopsImage.add(R.drawable.hero);
+        //new
+        shopsImage.add(R.drawable.book_market);
+        shopsImage.add(R.drawable.kham_express);
+        shopsImage.add(R.drawable.e_dokandar);
 
         final List<String> shopsItem = new ArrayList<>();
         shopsItem.add("Sumash Tech");
         shopsItem.add("Rio International");
         shopsItem.add("Star Tech");
         shopsItem.add("Samsung");
-        shopsItem.add("New Camera World");
+        shopsItem.add(getString(R.string.newCameraWorld));
         shopsItem.add("Hero");
+        //new
+        shopsItem.add("বই বাজার");
+        shopsItem.add("Kham Express");
+        shopsItem.add("E Dokandar");
+
 
         CustomAdapter adapter = new CustomAdapter(getContext(), shopsItem, shopsImage);
         recyclerView.setAdapter(adapter);

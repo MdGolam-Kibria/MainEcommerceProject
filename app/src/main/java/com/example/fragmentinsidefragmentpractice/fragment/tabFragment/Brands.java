@@ -50,8 +50,8 @@ public class Brands extends Fragment {
         brandsImage.add(R.drawable.aci);
         brandsImage.add(R.drawable.samsung);
         brandsImage.add(R.drawable.xiaomi);
-        brandsImage.add(R.drawable.nastle);
-        brandsImage.add(R.drawable.teer);
+        brandsImage.add(R.drawable.fresh);
+        brandsImage.add(R.drawable.bashundhara);
         final List<String> brandsItem = new ArrayList<>();
         brandsItem.add("Toyota");
         brandsItem.add("Individual Collection");
@@ -60,8 +60,8 @@ public class Brands extends Fragment {
         brandsItem.add("Aci");
         brandsItem.add("Samsung");
         brandsItem.add("Xiaomi");
-        brandsItem.add("Nestle");
-        brandsItem.add("Teer");
+        brandsItem.add("Fresh");
+        brandsItem.add("Bashundhara");
         CustomAdapter adapter = new CustomAdapter(getContext(), brandsItem, brandsImage);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
