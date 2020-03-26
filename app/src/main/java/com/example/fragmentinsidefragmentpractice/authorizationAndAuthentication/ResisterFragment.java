@@ -31,6 +31,7 @@ public class ResisterFragment extends Fragment implements View.OnClickListener {
     Button signUp;
     DatabaseReference databaseReference;
 
+
     public ResisterFragment() {
         // Required empty public constructor
     }
@@ -59,58 +60,44 @@ public class ResisterFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+//        String userName = name.getText().toString();
+//        String userPhone = phone.getText().toString();
+//        String userInvitationCode = invitationCode.getText().toString();
         if (v.getId() == R.id.signupBtn) {
+            if (name.getText().toString().isEmpty()) {
+                name.setError("Name is empty");
+                name.requestFocus();
+                return;
+            }
+            if (phone.getText().toString().isEmpty()) {
+                phone.setError("Invalid Number");
+                phone.requestFocus();
+                return;
+            }
+            if (!phone.getText().toString().startsWith("01")){
+                phone.setError("make sure number start with 01");
+            }
             saveData();
 
         }
     }
 
     private void saveData() {
-        String userName = name.getText().toString().trim();
-        String userPhone = phone.getText().toString().trim();
-        String invitationCodes = invitationCode.getText().toString().trim();
-        Boolean agreement = false;
+        String key = databaseReference.push().getKey();
         if (checkBox.isChecked()) {
-            agreement = true;
-        }
-        if (userName.isEmpty()) {
-            name.setError("Name is empty");
-            name.requestFocus();
-        }
-        if (userName.length() >= 30) {
-            name.setError("your name too long");
-        }
-        if (userPhone.isEmpty()) {
-            phone.setError("phone is Empty");
-            phone.requestFocus();
-        }
-        if (userPhone.length() != 11 || userPhone.isEmpty() || !userPhone.startsWith("01")) {
-            phone.setError("Invalid Number");
-            phone.requestFocus();
-        }
-        if (agreement == false) {
-            Toast.makeText(getContext(), "Please agree with our trams and conditions", Toast.LENGTH_LONG).show();
-        }
-        if (agreement == true) {
-            String key = databaseReference.push().getKey();
-
-            if (invitationCodes.equals(null)) {
-                databaseReference.child(key).setValue(new UserPojo(userName, userPhone));
-                name.setText("");
-                phone.setText("");
-                invitationCode.setText("");
-            } else if (!invitationCodes.equals(null)) {
-                databaseReference.child(key).setValue(new UserPojo(userName, userPhone, invitationCodes));
-                name.setText("");
-                phone.setText("");
-                invitationCode.setText("");
+            if (invitationCode.getText().toString().equals(null)) {
+                databaseReference.child(key).setValue(new UserPojo(name.getText().toString(), phone.getText().toString()));
+            }else if (!invitationCode.getText().toString().equals(null)){
+                databaseReference.child(key).setValue(new UserPojo(name.getText().toString(), phone.getText().toString(),invitationCode.getText().toString()));
             }
-            Toast.makeText(getContext(), "User added", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "data added", Toast.LENGTH_LONG).show();
             //after all check
             FragmentTransaction transaction = getFragmentManager().beginTransaction()
                     .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil.changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
             transaction.replace(R.id.fragment, new SetOTPcodeAndPassword(), "kkkkkk").addToBackStack(null).commit();
 
+        }else if (!checkBox.isChecked()){
+            Toast.makeText(getContext(), "Please agree with our trams and conditions", Toast.LENGTH_SHORT).show();
         }
     }
 }

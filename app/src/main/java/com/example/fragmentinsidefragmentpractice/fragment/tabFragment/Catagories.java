@@ -1,6 +1,8 @@
 package com.example.fragmentinsidefragmentpractice.fragment.tabFragment;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +12,13 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
+import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagories;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +26,8 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Catagories extends Fragment {
-//String item[];
+public class Catagories extends Fragment implements View.OnClickListener {
 
-
-//int [] imagee = {
-//        R.drawable.bag,R.drawable.body_care,R.drawable.book,R.drawable.construction_material,
-//        R.drawable.decoration_material,R.drawable.digital_good,R.drawable.electric,R.drawable.event,
-//        R.drawable.woman_fashion,R.drawable.man_fashion};
 
     private RecyclerView recyclerView;
     FragmentActivity fragmentActivity = getActivity();
@@ -88,6 +84,12 @@ public class Catagories extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(getContext(), "" + item.get(position), Toast.LENGTH_SHORT).show();
+                switch (position){
+                    case 0:
+                        startActivity(new Intent(getActivity(), SubCatagories.class));
+                            //  * below animation for fragment to activity.
+                        ((Activity) getActivity()).overridePendingTransition(R.animator.enter_from_right, R.animator.exit_to_left);
+                }
             }
 
             @Override
@@ -96,5 +98,10 @@ public class Catagories extends Fragment {
             }
         }));
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
