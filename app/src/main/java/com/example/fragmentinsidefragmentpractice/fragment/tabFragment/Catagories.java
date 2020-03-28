@@ -1,8 +1,6 @@
 package com.example.fragmentinsidefragmentpractice.fragment.tabFragment;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,14 +9,18 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fragmentinsidefragmentpractice.OTP.SetOTPcodeAndPassword;
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
-import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagories;
+import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagoriesForBag;
+import com.example.fragmentinsidefragmentpractice.util.UseUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,20 +49,17 @@ public class Catagories extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.recyclerViewCatagories);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(fragmentActivity, 3));//numberOfColumns
-        // item = getResources().getStringArray(R.array.recyclerItem);
         List<Integer> image = new ArrayList<>();
         image.add(R.drawable.bag);
         image.add(R.drawable.body_care);
         image.add(R.drawable.book);
         image.add(R.drawable.glass);
-        //new
         image.add(R.drawable.mother_kids_toys);
         image.add(R.drawable.sports);
         image.add(R.drawable.vehicles_parts);
         image.add(R.drawable.home_living);
         image.add(R.drawable.home_appliance);
         image.add(R.drawable.grocery);
-
         image.add(R.drawable.construction_material);
         image.add(R.drawable.decoration_material);
         image.add(R.drawable.digital_good);
@@ -75,15 +74,12 @@ public class Catagories extends Fragment implements View.OnClickListener {
         item.add("BodyCare");
         item.add("Books");
         item.add("Glasses");
-//new
         item.add(getString(R.string.motherKidsToys));
         item.add("Sports");
         item.add("vehicles & parts");
         item.add("Home & Living");
         item.add("Home Appliance");
         item.add("Grocery");
-
-
         item.add("Construction materials");
         item.add("Decoration");
         item.add("Digital Goods");
@@ -103,9 +99,20 @@ public class Catagories extends Fragment implements View.OnClickListener {
                 Toast.makeText(getContext(), "" + item.get(position), Toast.LENGTH_SHORT).show();
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(getActivity(), SubCatagories.class));
-                        //  * below animation for fragment to activity.
-                        ((Activity) getActivity()).overridePendingTransition(R.animator.enter_from_right, R.animator.exit_to_left);
+//                        startActivity(new Intent(getActivity(), SubCatagories.class));
+//                        //  * below animation for fragment to activity.
+//                        ((Activity) getActivity()).overridePendingTransition(R.animator.enter_from_right,R.animator.exit_to_left);
+//                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                        fragmentManager.beginTransaction()
+//                                .replace(R.id.fragment,new SubCatagoriesForBag(),"kkkkkml")
+//                                .addToBackStack(null)
+//                                .commit();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                                .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil
+                                        .changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
+                        transaction.replace(R.id.fragment, new SubCatagoriesForBag(), "lll").addToBackStack(null).commit();
+
+
                 }
             }
 
@@ -116,6 +123,7 @@ public class Catagories extends Fragment implements View.OnClickListener {
         }));
         return view;
     }
+
 
     @Override
     public void onClick(View v) {

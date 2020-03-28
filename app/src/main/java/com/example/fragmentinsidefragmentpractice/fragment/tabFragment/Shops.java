@@ -2,16 +2,15 @@ package com.example.fragmentinsidefragmentpractice.fragment.tabFragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
@@ -46,15 +45,17 @@ public class Shops extends Fragment {
         List<Integer> shopsImage = new ArrayList<>();
         shopsImage.add(R.drawable.sumash_tech);
         shopsImage.add(R.drawable.rio_international);
+        ///
+        //shopsImage.add(Glide.with())
+
+        ///
         shopsImage.add(R.drawable.star_tech);
         shopsImage.add(R.drawable.samsung);
         shopsImage.add(R.drawable.new_camera_world);
         shopsImage.add(R.drawable.hero);
-        //new
         shopsImage.add(R.drawable.book_market);
         shopsImage.add(R.drawable.kham_express);
         shopsImage.add(R.drawable.e_dokandar);
-
         final List<String> shopsItem = new ArrayList<>();
         shopsItem.add("Sumash Tech");
         shopsItem.add("Rio International");
@@ -62,7 +63,6 @@ public class Shops extends Fragment {
         shopsItem.add("Samsung");
         shopsItem.add(getString(R.string.newCameraWorld));
         shopsItem.add("Hero");
-        //new
         shopsItem.add("বই বাজার");
         shopsItem.add("Kham Express");
         shopsItem.add("E Dokandar");
