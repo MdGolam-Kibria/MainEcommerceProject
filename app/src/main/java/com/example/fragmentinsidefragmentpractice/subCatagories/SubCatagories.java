@@ -80,4 +80,7 @@ public class SubCatagories extends AppCompatActivity {
         this.setTitle("");
         this.getSupportActionBar().hide();
     }
+
+
+
 }

@@ -9,16 +9,15 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fragmentinsidefragmentpractice.OTP.SetOTPcodeAndPassword;
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
+import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagories;
 import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagoriesForBag;
 import com.example.fragmentinsidefragmentpractice.util.UseUtil;
 
@@ -28,8 +27,8 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Catagories extends Fragment implements View.OnClickListener {
-
+public class Catagories extends Fragment {
+    public static int returnPosition;
 
     private RecyclerView recyclerView;
     FragmentActivity fragmentActivity = getActivity();
@@ -96,24 +95,9 @@ public class Catagories extends Fragment implements View.OnClickListener {
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
+                returnPosition = position;
                 Toast.makeText(getContext(), "" + item.get(position), Toast.LENGTH_SHORT).show();
-                switch (position) {
-                    case 0:
-//                        startActivity(new Intent(getActivity(), SubCatagories.class));
-//                        //  * below animation for fragment to activity.
-//                        ((Activity) getActivity()).overridePendingTransition(R.animator.enter_from_right,R.animator.exit_to_left);
-//                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//                        fragmentManager.beginTransaction()
-//                                .replace(R.id.fragment,new SubCatagoriesForBag(),"kkkkkml")
-//                                .addToBackStack(null)
-//                                .commit();
-                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction()
-                                .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil
-                                        .changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
-                        transaction.replace(R.id.fragment, new SubCatagoriesForBag(), "lll").addToBackStack(null).commit();
-
-
-                }
+                moveSubCatagories();//for move sub catagories fragment
             }
 
             @Override
@@ -124,9 +108,11 @@ public class Catagories extends Fragment implements View.OnClickListener {
         return view;
     }
 
-
-    @Override
-    public void onClick(View v) {
-
+    private FragmentTransaction moveSubCatagories() {
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil
+                        .changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
+        transaction.replace(R.id.fragment, new SubCatagoriesForBag(), "lll").addToBackStack(null).commit();
+        return transaction;
     }
 }
