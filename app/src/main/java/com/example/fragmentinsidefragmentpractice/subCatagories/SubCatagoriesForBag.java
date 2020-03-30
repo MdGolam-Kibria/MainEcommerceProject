@@ -1,5 +1,6 @@
 package com.example.fragmentinsidefragmentpractice.subCatagories;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.captaindroid.tvg.Tvg;
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Catagories;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
@@ -46,6 +48,13 @@ public class SubCatagoriesForBag extends Fragment {
 
         if (Catagories.returnPosition == 0) {
             textView.setText("Bag Sub Catagories");
+            Tvg.change((TextView) textView, new int[]{
+                    Color.parseColor("#F97C3C"),
+                    Color.parseColor("#FDB54E"),
+                    Color.parseColor("#64B678"),
+                    Color.parseColor("#478AEA"),
+                    Color.parseColor("#8446CC"),
+            });
             bagItem.add("Backpack");
             bagItem.add("Card Holders");
             bagItem.add("Clutches");
@@ -69,6 +78,13 @@ public class SubCatagoriesForBag extends Fragment {
             subBagimage.add(R.drawable.laptop_and_tablet_bags);
         }
         if (Catagories.returnPosition == 1) {
+            Tvg.change((TextView) textView, new int[]{
+                    Color.parseColor("#F97C3C"),
+                    Color.parseColor("#FDB54E"),
+                    Color.parseColor("#64B678"),
+                    Color.parseColor("#478AEA"),
+                    Color.parseColor("#8446CC"),
+            });
             textView.setText("Body Care Sub Catagories");
             bagItem.add("Bath & Body");
             bagItem.add("Beauty Tools");

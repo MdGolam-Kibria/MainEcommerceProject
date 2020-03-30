@@ -42,6 +42,9 @@ dependencies {
     //for edit text design
     implementation "ss.anoop:awesome-textinput-layout:1.0.0"
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    //text color style
+    implementation 'com.github.tushar09:Gradient-Textview:1.0'
 //Glide for image loader
 //    implementation 'com.github.bumptech.glide:glide:4.9.0'
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
