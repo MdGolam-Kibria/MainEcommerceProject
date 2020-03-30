@@ -1,13 +1,25 @@
 package com.example.fragmentinsidefragmentpractice.subCatagories;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fragmentinsidefragmentpractice.R;
+import com.example.fragmentinsidefragmentpractice.animation.ZoomOutPageTransformer;
+import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Brands;
+import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Catagories;
+import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Shops;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
@@ -15,72 +27,84 @@ import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHun
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubCatagories extends AppCompatActivity {
-    private RecyclerView recyclerView;
+
+public class SubCatagories extends Fragment {
+
+
+    View view;
+    ViewPager viewPager;
+    //    TabLayout tabLayout;
+    TextView subCatagories, shops;
+
+
+//    RecyclerView recyclerView;
+//    List<Integer> image = new ArrayList<>();
+//    List<String> item = new ArrayList<>();
+//    TextView textView;
+
+    public SubCatagories() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub_catagories);
-        customActionBar();
-        findAll();
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));//numberOfColumns
-        // item = getResources().getStringArray(R.array.recyclerItem);
-        List<Integer> image = new ArrayList<>();
-        image.add(R.drawable.bag);
-        image.add(R.drawable.body_care);
-        image.add(R.drawable.book);
-        image.add(R.drawable.glass);
-        image.add(R.drawable.construction_material);
-        image.add(R.drawable.decoration_material);
-        image.add(R.drawable.digital_good);
-        image.add(R.drawable.eletric);
-        image.add(R.drawable.watch_clock);
-        image.add(R.drawable.woman_fashion);
-        image.add(R.drawable.man_fashion);
-        image.add(R.drawable.furniture);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_sub_catagories1, container, false);
+        subCatagories = view.findViewById(R.id.subCategories);
+        shops = view.findViewById(R.id.shops);
+        viewPager = view.findViewById(R.id.viewPagerForSubCatagories);
+        viewPager.setPageTransformer(true, new ZoomOutPageTransformer()); //here view pager animations.
 
-        final List<String> item = new ArrayList<>();
-        item.add("Bags");
-        item.add("BodyCare");
-        item.add("Books");
-        item.add("Glasses");
-        item.add("Construction materials");
-        item.add("Decoration");
-        item.add("Digital Goods");
-        item.add("Electric");
-        item.add("Watch & Clock");
-        item.add("Woman Fashion");
-        item.add("Man Fashion");
-        item.add("Furniture");
-
-        CustomAdapter adapter = new CustomAdapter(this, item, image);
-        recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(this, GridLayoutManager.HORIZONTAL, 16));
-        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(this, GridLayoutManager.VERTICAL, 20));
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, recyclerView, new RecyclerTouchListener.ClickListener() {
+        subCatagories.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view, int position) {
+            public void onClick(View v) {
+                viewPager.setCurrentItem(0);
+            }
+        });
+        shops.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(1);
+            }
+        });
+
+        FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
+            @NonNull
+            @Override
+            public Fragment getItem(int position) {
+                switch (position) {
+                    case 0:
+                        return new SubCtatagoriesView();
+                    case 1:
+                        return new SubCtatagoriesView();
+                }
+                return null;
+            }
+
+            @Override
+            public int getCount() {
+                return 2;
+            }
+        };
+        viewPager.setAdapter(fragmentPagerAdapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
 
             @Override
-            public void onLongClick(View view, int position) {
+            public void onPageSelected(int position) {
 
             }
-        }));
 
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        return view;
     }
-
-    private void findAll() {
-        recyclerView = findViewById(R.id.recyclerViewSubCatagories);
-    }
-
-    private void customActionBar() {
-        this.setTitle("");
-        this.getSupportActionBar().hide();
-    }
-
-
-
 }

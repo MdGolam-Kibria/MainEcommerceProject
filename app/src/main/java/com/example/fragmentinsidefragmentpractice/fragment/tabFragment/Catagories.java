@@ -18,7 +18,6 @@ import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
 import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagories;
-import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagoriesForBag;
 import com.example.fragmentinsidefragmentpractice.util.UseUtil;
 
 import java.util.ArrayList;
@@ -112,7 +111,7 @@ public class Catagories extends Fragment {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil
                         .changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
-        transaction.replace(R.id.fragment, new SubCatagoriesForBag(), "lll").addToBackStack(null).commit();
+        transaction.replace(R.id.fragment, new SubCatagories(), "catagories").addToBackStack(null).commit();
         return transaction;
     }
 }

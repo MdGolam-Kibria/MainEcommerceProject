@@ -27,7 +27,7 @@ import com.google.android.material.tabs.TabLayout;
 public class HomeFragment extends Fragment {
     View view;
     ViewPager viewPager;
-    TabLayout tabLayout;
+//    TabLayout tabLayout;
     TextView catagoriesTab, brandsTab, shopsTab;
 
     public HomeFragment() {

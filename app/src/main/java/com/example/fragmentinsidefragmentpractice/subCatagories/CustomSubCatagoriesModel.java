@@ -6,17 +6,17 @@ import android.widget.TextView;
 import com.captaindroid.tvg.Tvg;
 import com.example.fragmentinsidefragmentpractice.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CustomSubCatagories {
-    TextView subBagTitle;
+public class CustomSubCatagoriesModel {
+
     List<String> subBagItem;
     List<Integer> subBagimage;
     int catagoriesPosition;
 
 
-    public CustomSubCatagories(TextView subBagTitle, List<String> subBagItem, List<Integer> subBagimage, int catagoriesPosition) {
-        this.subBagTitle = subBagTitle;
+    public CustomSubCatagoriesModel(List<String> subBagItem, List<Integer> subBagimage, int catagoriesPosition) {
         this.subBagItem = subBagItem;
         this.subBagimage = subBagimage;
         this.catagoriesPosition = catagoriesPosition;
@@ -29,14 +29,14 @@ public class CustomSubCatagories {
     }
 
     private void bagSubCatagories() {
-        subBagTitle.setText("Bag Sub Catagories");
-        Tvg.change((TextView) subBagTitle, new int[]{
-                Color.parseColor("#F97C3C"),
-                Color.parseColor("#FDB54E"),
-                Color.parseColor("#64B678"),
-                Color.parseColor("#478AEA"),
-                Color.parseColor("#8446CC"),
-        });
+//        subBagTitle.setText("Bag Sub Catagories");
+//        Tvg.change((TextView) subBagTitle, new int[]{
+//                Color.parseColor("#F97C3C"),
+//                Color.parseColor("#FDB54E"),
+//                Color.parseColor("#64B678"),
+//                Color.parseColor("#478AEA"),
+//                Color.parseColor("#8446CC"),
+//        });
         //item
         this.subBagItem.add("Backpack");
         this.subBagItem.add("Card Holders");
@@ -62,14 +62,14 @@ public class CustomSubCatagories {
     }
 
     private void bodyCareSubCtagories() {
-        subBagTitle.setText("Body Care Sub Catagories");
-        Tvg.change((TextView) subBagTitle, new int[]{
-                Color.parseColor("#F97C3C"),
-                Color.parseColor("#FDB54E"),
-                Color.parseColor("#64B678"),
-                Color.parseColor("#478AEA"),
-                Color.parseColor("#8446CC"),
-        });
+//        subBagTitle.setText("Body Care Sub Catagories");
+//        Tvg.change((TextView) subBagTitle, new int[]{
+//                Color.parseColor("#F97C3C"),
+//                Color.parseColor("#FDB54E"),
+//                Color.parseColor("#64B678"),
+//                Color.parseColor("#478AEA"),
+//                Color.parseColor("#8446CC"),
+//        });
         //item
         this.subBagItem.add("Bath & Body");
         this.subBagItem.add("Beauty Tools");
