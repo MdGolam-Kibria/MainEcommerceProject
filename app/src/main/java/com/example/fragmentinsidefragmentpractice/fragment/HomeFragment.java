@@ -1,6 +1,7 @@
 package com.example.fragmentinsidefragmentpractice.fragment;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.captaindroid.tvg.Tvg;
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.animation.ZoomOutPageTransformer;
 import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Brands;
@@ -39,13 +41,19 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
-
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer()); //here view pager animations.
 
         catagoriesTab = view.findViewById(R.id.categories);
         brandsTab = view.findViewById(R.id.brands);
         shopsTab = view.findViewById(R.id.shops);
+        Tvg.change((TextView) catagoriesTab, new int[]{
+                Color.parseColor("#F97C3C"),
+                Color.parseColor("#FDB54E"),
+                Color.parseColor("#64B678"),
+                Color.parseColor("#478AEA"),
+                Color.parseColor("#8446CC"),
+        });
         catagoriesTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,17 +119,28 @@ public class HomeFragment extends Fragment {
     @SuppressLint("ResourceAsColor")
     private void selectTabs(int position) {
         if (position == 0) {
-//            brandsTab.setTextColor(R.color.tab);
-//            shopsTab.setTextColor(R.color.tab);
-
+             Tvg.change((TextView) catagoriesTab, new int[]{
+                    Color.parseColor("#F97C3C"),
+                    Color.parseColor("#FDB54E"),
+                    Color.parseColor("#64B678"),
+                    Color.parseColor("#478AEA"),
+                    Color.parseColor("#8446CC"),
+            });
             catagoriesTab.setTextSize(20f);
+            brandsTab.setTextColor(R.color.black);
+            shopsTab.setTextColor(R.color.black);
         }
         if (position == 1) {
-
-            //  catagoriesTab.setBackgroundColor(R.color.black);
-
-//            catagoriesTab.setTextColor(R.color.tab);
-//            shopsTab.setTextColor(R.color.tab);
+            Tvg.change((TextView) brandsTab, new int[]{
+                    Color.parseColor("#F97C3C"),
+                    Color.parseColor("#FDB54E"),
+                    Color.parseColor("#64B678"),
+                    Color.parseColor("#478AEA"),
+                    Color.parseColor("#8446CC"),
+            });
+            brandsTab.setTextSize(20f);
+            catagoriesTab.setTextColor(R.color.black);
+            shopsTab.setTextColor(R.color.black);
         }
         if (position == 2) {
 //            brandsTab.setTextColor(R.color.tab);

@@ -42,7 +42,8 @@ dependencies {
     //for edit text design
     implementation "ss.anoop:awesome-textinput-layout:1.0.0"
     implementation 'androidx.cardview:cardview:1.0.0'
-
+//recyclerView animations library
+    implementation "com.mlsdev.animatedrv:library:1.0.1"
     //text color style
     implementation 'com.github.tushar09:Gradient-Textview:1.0'
 //Glide for image loader
