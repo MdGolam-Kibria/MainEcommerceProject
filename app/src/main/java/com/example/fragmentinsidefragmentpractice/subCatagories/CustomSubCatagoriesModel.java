@@ -43,7 +43,9 @@ public class CustomSubCatagoriesModel {
                 String amazonBdEcomarce[] = {"bags", "bodyCare", "books", "glasses", "moderKidsAndtoys", "sports", "vehiclesAndParts", "homeAndLiving",
                         "homeAndAppliance", "grocery", "constructionMaterials", "decoration", "digitalGoods", "electricAndParts", "watchAndClock", "womanFashion",
                         "manFashion", "Furniture"};
+                            //below the logic
 
+                
 //                int size = toppings.length;
 //                for (int i=0; i<size; i++)
 //                {
