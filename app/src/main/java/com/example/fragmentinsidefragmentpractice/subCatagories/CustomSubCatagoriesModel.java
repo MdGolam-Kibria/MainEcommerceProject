@@ -15,7 +15,18 @@ public class CustomSubCatagoriesModel {
     List<Integer> subBagimage;
     int catagoriesPosition;
     int selectShopTabs;
-
+    //shops products.
+    String amazonBdEcomarce[] = {"bags", "bodyCare", "books", "glasses", "motherKidsAndtoys", "sports", "vehiclesAndParts", "homeAndLiving",
+            "homeAndAppliance", "grocery", "constructionMaterials", "decoration", "digitalGoods", "electricAndParts", "watchAndClock", "womanFashion",
+            "manFashion", "Furniture"};
+    String eshaShop[] = {"bags", "bodyCare", "homeAndLiving", "grocery"};
+    String khanPrintingMuseum[] = {"bags", "bodyCare", "homeAndLiving", "grocery", "Furniture"};
+    String parizaFashion[] = {"bags", "bodyCare", "homeAndLiving", "grocery", "Furniture", "womanFashion", "manFashion"};
+    String shoppersHubBd[] = {"bags", "bodyCare", "books", "glasses", "motherKidsAndtoys", "sports", "vehiclesAndParts", "homeAndLiving",
+            "homeAndAppliance", "grocery"};
+    String superMarketBd[] = {"bags", "bodyCare", "books", "glasses", "motherKidsAndtoys", "sports", "vehiclesAndParts", "homeAndLiving",
+            "homeAndAppliance", "grocery", "constructionMaterials", "decoration", "digitalGoods", "electricAndParts", "watchAndClock", "womanFashion",
+            "manFashion", "Furniture"};
 
     public CustomSubCatagoriesModel(List<String> subBagItem, List<Integer> subBagimage, int catagoriesPosition, int selectTabs) {
         this.subBagItem = subBagItem;
@@ -24,34 +35,14 @@ public class CustomSubCatagoriesModel {
         this.selectShopTabs = selectTabs;
         if (catagoriesPosition == 0) {//jodi bag click hoi
             if (selectShopTabs == 1) {//jodi shops tab e jai
-//                this.subBagItem.add("Backpack");
-//                this.subBagItem.add("Card Holders");
-//                //image
-//                this.subBagimage.add(R.drawable.bag);
-//                this.subBagimage.add(R.drawable.card_holders);
-
-                String mainCatagories = "Bags";//catagoriesPosition == 0  manei bag
-                Integer shopsImage[] = {
-                        R.drawable.amazon_bd_ecommarce,
-                        R.drawable.esha_shop,
-                        R.drawable.khan_printing_museum,
-                        R.drawable.pariza_fashion,
-                        R.drawable.shoppers_hub_bd,
-                        R.drawable.super_market_bd
-                };
-                String shopName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "parizaFashion", "shoppersHubBd", "superMarketBd"};
-                String amazonBdEcomarce[] = {"bags", "bodyCare", "books", "glasses", "moderKidsAndtoys", "sports", "vehiclesAndParts", "homeAndLiving",
-                        "homeAndAppliance", "grocery", "constructionMaterials", "decoration", "digitalGoods", "electricAndParts", "watchAndClock", "womanFashion",
-                        "manFashion", "Furniture"};
-                            //below the logic
-
-
-//                int size = toppings.length;
-//                for (int i=0; i<size; i++)
-//                {
-//                    System.out.println(toppings[i]);
-//                }
-
+                String mainCatagories = "bags";//catagoriesPosition == 0  manei bag
+                int amazonBdEcomarceSize = amazonBdEcomarce.length;
+                for (int i = 0; i < amazonBdEcomarceSize; i++) {
+                    if (amazonBdEcomarce[i].equals(mainCatagories)) {
+                        this.subBagItem.add("Amazon BD Ecomarce");
+                        this.subBagimage.add(R.drawable.amazon_bd_ecommarce);
+                    }
+                }
             } else {//jodi shops tab e na na jai
                 bagSubCatagories();
             }
@@ -62,7 +53,6 @@ public class CustomSubCatagoriesModel {
     }
 
     private void bagSubCatagories() {
-
         //item
         this.subBagItem.add("Backpack");
         this.subBagItem.add("Card Holders");
@@ -113,5 +103,4 @@ public class CustomSubCatagoriesModel {
         subBagimage.add(R.drawable.sexul_wellness);
         subBagimage.add(R.drawable.skin_and_beauty_care);
     }
-
 }
