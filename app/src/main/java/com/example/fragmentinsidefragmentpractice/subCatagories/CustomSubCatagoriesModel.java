@@ -14,17 +14,15 @@ public class CustomSubCatagoriesModel {
     String bagSubCatagoriesName[] = {"Backpack", "Card Holders", "Clutches", "Designers Bag", "Crossbody Bags", "Office Bag", "Shoulder Bag", "Wallets", "Kids School Bags", "Laptop & Tablet Bag"};
     int bagSubCatagoriesImage[] = {R.drawable.bath_and_body, R.drawable.beauty_tools, R.drawable.beauty_tools2, R.drawable.facial_cleansing_brushes, R.drawable.fragrances,
             R.drawable.gift_sets, R.drawable.hair_care, R.drawable.makeupball, R.drawable.mans_care, R.drawable.sexul_wellness, R.drawable.skin_and_beauty_care};
-    //bag providers
+    //bag shops
     String bagsProvidersName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "shoppersHubBd", "superMarketBd"};
     int bagsProvidersImage[] = {R.drawable.amazon_bd_ecommarce, R.drawable.esha_shop, R.drawable.khan_printing_museum, R.drawable.shoppers_hub_bd,
             R.drawable.super_market_bd};
-
-    //bodyCareSubCatagories
+    //body care shops
     String bodyCareProvidersName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "shoppersHubBd", "superMarketBd"};
     int bodyCareProvidersImage[] = {R.drawable.amazon_bd_ecommarce, R.drawable.esha_shop, R.drawable.khan_printing_museum, R.drawable.shoppers_hub_bd,
             R.drawable.super_market_bd};
-
-    //body care providers
+    //bodyCareSubCatagories
     String bodyCareSubCatagoriesName[] = {"Bath & Body", "Beauty Tools", "Beauty Tools", "Facial Cleansing Brushes", "Fragrances", "Gift Sets", "Hair Care",
             "MakeupBall", "Men's Care", "Sexual Wellness", "Skin & Body Care"};
     int bodyCareSubCatagoriesImage[] = {R.drawable.bath_and_body, R.drawable.beauty_tools, R.drawable.beauty_tools2, R.drawable.facial_cleansing_brushes, R.drawable.fragrances,
