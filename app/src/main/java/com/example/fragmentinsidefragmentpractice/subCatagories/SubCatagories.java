@@ -71,7 +71,7 @@ public class SubCatagories extends Fragment {
                     case 0:
                         return new SubCtatagoriesView();
                     case 1:
-                        return new SubCtatagoriesView(1);
+                        return new SubCtatagoriesView(1);// Parameter 1 dissi ai jonno je tablayout with viewPager er 2 number tab er load er source hisebe dewa.
                 }
                 return null;
             }

@@ -30,13 +30,13 @@ public class SubCtatagoriesView extends Fragment {
     RecyclerView recyclerView;
     List<Integer> image = new ArrayList<>();
     List<String> item = new ArrayList<>();
-    int selectTabPosition;
+    int selectTabPosition; //2 num tab a click er source constructor theke set kora
 
     public SubCtatagoriesView() {
         // Required empty public constructor
     }
 
-    public SubCtatagoriesView(int selectTabs) {
+    public SubCtatagoriesView(int selectTabs) {//selectTabs hosse 2 num tab a click er source
         this.selectTabPosition = selectTabs;
     }
 
@@ -54,8 +54,9 @@ public class SubCtatagoriesView extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));//numberOfColumns
         Toast.makeText(getContext(), "This is click position = " + Catagories.returnPosition, Toast.LENGTH_LONG).show();
+        // niche CustomSubCatagoriesModel class dara ei fragment er moddhe "Catagories.returnPosition" er dara view load korechi
         new CustomSubCatagoriesModel(item, image, Catagories.returnPosition,selectTabPosition);//set every catarories view
-        CustomAdapter adapter = new CustomAdapter(getContext(), item, image);
+        CustomAdapter adapter = new CustomAdapter(getContext(), item, image);//recyclerView configurations.
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 20));

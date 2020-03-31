@@ -35,34 +35,34 @@ public class CustomSubCatagoriesModel {
         this.selectShopTabs = selectShopsTabs;
         if (catagoriesPosition == 0) {//jodi bag click hoi
             if (selectShopTabs == 1) {//jodi shops tab e jai
-                subItem.removeAll(subItem);
-                subImage.removeAll(subImage);
-                for (int i = 0; i < bagsProvidersName.length; i++) {
+                subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+                subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+                for (int i = 0; i < bagsProvidersName.length; i++) {//set shops for bag catagories.
                     this.subItem.add(bagsProvidersName[i]);
                     this.subImage.add(bagsProvidersImage[i]);
                 }
             } else {//jodi shops tab e na na jai
-                bagSubCatagories();
+                bagSubCatagories();//set sunCatagories for bag catagories.
             }
         }
         if (catagoriesPosition == 1) {//jodi body care click hoi
             if (selectShopTabs == 1) {//jodi shops tab e jai
-                subItem.removeAll(subItem);
-                subImage.removeAll(subImage);
-                for (int i = 0; i < bodyCareProvidersName.length; i++) {
+                subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+                subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+                for (int i = 0; i < bodyCareProvidersName.length; i++) {//set shops for bodyCare catagories
                     this.subItem.add(bodyCareProvidersName[i]);
                     this.subImage.add(bodyCareProvidersImage[i]);
                 }
-            }else {
-            bodyCareSubCtagories();//jodi shops tab e na na jai
+            } else {
+                bodyCareSubCtagories();//jodi shops tab e na na jai tahole sub catagories e jabe bodyCare catagories er jonno.
             }
         }
     }
 
     private void bagSubCatagories() {
 
-        subItem.removeAll(subItem);
-        subImage.removeAll(subImage);
+        subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+        subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
         for (int i = 0; i < bagSubCatagoriesName.length; i++) {
             this.subItem.add(bagSubCatagoriesName[i]);
             this.subImage.add(bagSubCatagoriesImage[i]);
@@ -70,8 +70,8 @@ public class CustomSubCatagoriesModel {
     }
 
     private void bodyCareSubCtagories() {
-        subItem.removeAll(subItem);
-        subImage.removeAll(subImage);
+        subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+        subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno.
         for (int i = 0; i < bodyCareSubCatagoriesName.length; i++) {
             this.subItem.add(bodyCareSubCatagoriesName[i]);
             this.subImage.add(bodyCareSubCatagoriesImage[i]);
