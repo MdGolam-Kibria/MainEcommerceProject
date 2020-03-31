@@ -14,29 +14,53 @@ public class CustomSubCatagoriesModel {
     List<String> subBagItem;
     List<Integer> subBagimage;
     int catagoriesPosition;
+    int selectShopTabs;
 
 
-    public CustomSubCatagoriesModel(List<String> subBagItem, List<Integer> subBagimage, int catagoriesPosition) {
+    public CustomSubCatagoriesModel(List<String> subBagItem, List<Integer> subBagimage, int catagoriesPosition, int selectTabs) {
         this.subBagItem = subBagItem;
         this.subBagimage = subBagimage;
         this.catagoriesPosition = catagoriesPosition;
-        if (catagoriesPosition == 0) {
-            bagSubCatagories();
+        this.selectShopTabs = selectTabs;
+        if (catagoriesPosition == 0) {//jodi bag click hoi
+            if (selectShopTabs == 1) {//jodi shops tab e jai
+//                this.subBagItem.add("Backpack");
+//                this.subBagItem.add("Card Holders");
+//                //image
+//                this.subBagimage.add(R.drawable.bag);
+//                this.subBagimage.add(R.drawable.card_holders);
+
+                String mainCatagories = "Bags";//catagoriesPosition == 0  manei bag
+                Integer shopsImage[] = {
+                        R.drawable.amazon_bd_ecommarce,
+                        R.drawable.esha_shop,
+                        R.drawable.khan_printing_museum,
+                        R.drawable.pariza_fashion,
+                        R.drawable.shoppers_hub_bd,
+                        R.drawable.super_market_bd
+                };
+                String shopName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "parizaFashion", "shoppersHubBd", "superMarketBd"};
+                String amazonBdEcomarce[] = {"bags", "bodyCare", "books", "glasses", "moderKidsAndtoys", "sports", "vehiclesAndParts", "homeAndLiving",
+                        "homeAndAppliance", "grocery", "constructionMaterials", "decoration", "digitalGoods", "electricAndParts", "watchAndClock", "womanFashion",
+                        "manFashion", "Furniture"};
+
+//                int size = toppings.length;
+//                for (int i=0; i<size; i++)
+//                {
+//                    System.out.println(toppings[i]);
+//                }
+
+            } else {//jodi shops tab e na na jai
+                bagSubCatagories();
+            }
         }
-        if (catagoriesPosition == 1) {
+        if (catagoriesPosition == 1) {//jodi body care click hoi
             bodyCareSubCtagories();
         }
     }
 
     private void bagSubCatagories() {
-//        subBagTitle.setText("Bag Sub Catagories");
-//        Tvg.change((TextView) subBagTitle, new int[]{
-//                Color.parseColor("#F97C3C"),
-//                Color.parseColor("#FDB54E"),
-//                Color.parseColor("#64B678"),
-//                Color.parseColor("#478AEA"),
-//                Color.parseColor("#8446CC"),
-//        });
+
         //item
         this.subBagItem.add("Backpack");
         this.subBagItem.add("Card Holders");
@@ -62,14 +86,6 @@ public class CustomSubCatagoriesModel {
     }
 
     private void bodyCareSubCtagories() {
-//        subBagTitle.setText("Body Care Sub Catagories");
-//        Tvg.change((TextView) subBagTitle, new int[]{
-//                Color.parseColor("#F97C3C"),
-//                Color.parseColor("#FDB54E"),
-//                Color.parseColor("#64B678"),
-//                Color.parseColor("#478AEA"),
-//                Color.parseColor("#8446CC"),
-//        });
         //item
         this.subBagItem.add("Bath & Body");
         this.subBagItem.add("Beauty Tools");

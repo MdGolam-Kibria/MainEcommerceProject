@@ -77,7 +77,7 @@ public class SubCatagories extends Fragment {
                     case 0:
                         return new SubCtatagoriesView();
                     case 1:
-                        return new SubCtatagoriesView();
+                        return new SubCtatagoriesView(1);
                 }
                 return null;
             }
