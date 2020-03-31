@@ -45,7 +45,7 @@ public class CustomSubCatagoriesModel {
                         "manFashion", "Furniture"};
                             //below the logic
 
-                
+
 //                int size = toppings.length;
 //                for (int i=0; i<size; i++)
 //                {
