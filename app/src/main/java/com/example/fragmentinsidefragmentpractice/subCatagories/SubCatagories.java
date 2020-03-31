@@ -33,14 +33,8 @@ public class SubCatagories extends Fragment {
 
     View view;
     ViewPager viewPager;
-    //    TabLayout tabLayout;
     TextView subCatagories, shops;
 
-
-//    RecyclerView recyclerView;
-//    List<Integer> image = new ArrayList<>();
-//    List<String> item = new ArrayList<>();
-//    TextView textView;
 
     public SubCatagories() {
         // Required empty public constructor
