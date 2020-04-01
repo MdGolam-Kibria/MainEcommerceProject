@@ -68,9 +68,11 @@ public class CustomSubCatagoriesModel {
             if (selectShopTabs == 1) {//jodi shops tab e jai
                 subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
                 subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
-//                for (int i = 0; i < CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesName.length; i++) {//set motherKidsAndToys for motherKidsAndToys catagories
-//                    this.subItem.add(CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesName[i]);
-//                    this.subImage.add(CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesImage[i]);
+                subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+                subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+//                for (int i = 0; i < CustomSubCatagoriesModelResource.glassesShopsName.length; i++) {//set motherKidsAndToys for motherKidsAndToys catagories
+//                    this.subItem.add(CustomSubCatagoriesModelResource.glassesShopsName[i]);
+//                    this.subImage.add(CustomSubCatagoriesModelResource.glassesShopsImage[i]);
 //                }
             } else {
                 motherKidsAndToysSubCatagoriess();//jodi shops tab e na na jai tahole sub catagories e jabe motherKidsAndToys catagories er jonno.
