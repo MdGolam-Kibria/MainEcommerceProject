@@ -27,11 +27,16 @@ public class CustomSubCatagoriesModel {
             "MakeupBall", "Men's Care", "Sexual Wellness", "Skin & Body Care"};
     int bodyCareSubCatagoriesImage[] = {R.drawable.bath_and_body, R.drawable.beauty_tools, R.drawable.beauty_tools2, R.drawable.facial_cleansing_brushes, R.drawable.fragrances,
             R.drawable.gift_sets, R.drawable.hair_care, R.drawable.makeupball, R.drawable.mans_care, R.drawable.sexul_wellness, R.drawable.skin_and_beauty_care};
-//Book Shops
-    String booksShopsName [] = {"Boi Ghor","BS Gatget BD","Cittron","Feri Wala","Amazon Bd Ecommarce","Gyan Bitan Publication","Rokomari 99","Sikder Books Cornar"};
-    int booksShopsImage [] =  {R.drawable.boi_ghor, R.drawable.bs_gatget_bd, R.drawable.cittron, R.drawable.feri_wala,R.drawable.amazon_bd_ecommarce, R.drawable.gyan_bitan_publications,
+    //Book Shops
+    String booksShopsName[] = {"Boi Ghor", "BS Gatget BD", "Cittron", "Feri Wala", "Amazon Bd Ecommarce", "Gyan Bitan Publication", "Rokomari 99", "Sikder Books Cornar"};
+    int booksShopsImage[] = {R.drawable.boi_ghor, R.drawable.bs_gatget_bd, R.drawable.cittron, R.drawable.feri_wala, R.drawable.amazon_bd_ecommarce, R.drawable.gyan_bitan_publications,
             R.drawable.rokomari_99, R.drawable.sikder_books_cornar};
-//BooksSubCatagories
+    //BooksSubCatagories
+    String booksSubCatagoriesName[] = {"Bangali Books On Interest", "Books For Kids", "English Books On Interest", "Others Books",
+            "Stationeries", "Text Books"};
+    int booksSubCatagoriesImage[] = {R.drawable.bangali_books_on_interest, R.drawable.books_for_kids, R.drawable.english_books_on_interest,
+            R.drawable.others_books, R.drawable.stationeries, R.drawable.text_books};
+
     public CustomSubCatagoriesModel(List<String> subItem, List<Integer> subImage, int catagoriesPosition, int selectShopsTabs) {
         this.subItem = subItem;
         this.subImage = subImage;
@@ -70,7 +75,7 @@ public class CustomSubCatagoriesModel {
                     this.subImage.add(booksShopsImage[i]);
                 }
             } else {
-               // booksSubCatagoriess();//jodi shops tab e na na jai tahole sub catagories e jabe books catagories er jonno.
+                booksSubCatagoriess();//jodi shops tab e na na jai tahole sub catagories e jabe books catagories er jonno.
             }
         }
     }
@@ -91,6 +96,15 @@ public class CustomSubCatagoriesModel {
         for (int i = 0; i < bodyCareSubCatagoriesName.length; i++) {
             this.subItem.add(bodyCareSubCatagoriesName[i]);
             this.subImage.add(bodyCareSubCatagoriesImage[i]);
+        }
+    }
+
+    private void booksSubCatagoriess() {
+        subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+        subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+        for (int i = 0; i < booksSubCatagoriesName.length; i++) {//set books for books catagories
+            this.subItem.add(booksSubCatagoriesName[i]);
+            this.subImage.add(booksSubCatagoriesImage[i]);
         }
     }
 }
