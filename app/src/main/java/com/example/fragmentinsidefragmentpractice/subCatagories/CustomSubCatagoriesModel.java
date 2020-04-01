@@ -15,19 +15,23 @@ public class CustomSubCatagoriesModel {
     int bagSubCatagoriesImage[] = {R.drawable.bath_and_body, R.drawable.beauty_tools, R.drawable.beauty_tools2, R.drawable.facial_cleansing_brushes, R.drawable.fragrances,
             R.drawable.gift_sets, R.drawable.hair_care, R.drawable.makeupball, R.drawable.mans_care, R.drawable.sexul_wellness, R.drawable.skin_and_beauty_care};
     //bag shops
-    String bagsProvidersName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "shoppersHubBd", "superMarketBd"};
-    int bagsProvidersImage[] = {R.drawable.amazon_bd_ecommarce, R.drawable.esha_shop, R.drawable.khan_printing_museum, R.drawable.shoppers_hub_bd,
+    String bagsShopsName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "shoppersHubBd", "superMarketBd"};
+    int bagsShopsImage[] = {R.drawable.amazon_bd_ecommarce, R.drawable.esha_shop, R.drawable.khan_printing_museum, R.drawable.shoppers_hub_bd,
             R.drawable.super_market_bd};
     //body care shops
-    String bodyCareProvidersName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "shoppersHubBd", "superMarketBd"};
-    int bodyCareProvidersImage[] = {R.drawable.amazon_bd_ecommarce, R.drawable.esha_shop, R.drawable.khan_printing_museum, R.drawable.shoppers_hub_bd,
+    String bodyCareShopsName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "shoppersHubBd", "superMarketBd"};
+    int bodyCareShopsImage[] = {R.drawable.amazon_bd_ecommarce, R.drawable.esha_shop, R.drawable.khan_printing_museum, R.drawable.shoppers_hub_bd,
             R.drawable.super_market_bd};
     //bodyCareSubCatagories
     String bodyCareSubCatagoriesName[] = {"Bath & Body", "Beauty Tools", "Beauty Tools", "Facial Cleansing Brushes", "Fragrances", "Gift Sets", "Hair Care",
             "MakeupBall", "Men's Care", "Sexual Wellness", "Skin & Body Care"};
     int bodyCareSubCatagoriesImage[] = {R.drawable.bath_and_body, R.drawable.beauty_tools, R.drawable.beauty_tools2, R.drawable.facial_cleansing_brushes, R.drawable.fragrances,
             R.drawable.gift_sets, R.drawable.hair_care, R.drawable.makeupball, R.drawable.mans_care, R.drawable.sexul_wellness, R.drawable.skin_and_beauty_care};
-
+//Book Shops
+    String booksShopsName [] = {"Boi Ghor","BS Gatget BD","Cittron","Feri Wala","Amazon Bd Ecommarce","Gyan Bitan Publication","Rokomari 99","Sikder Books Cornar"};
+    int booksShopsImage [] =  {R.drawable.boi_ghor, R.drawable.bs_gatget_bd, R.drawable.cittron, R.drawable.feri_wala,R.drawable.amazon_bd_ecommarce, R.drawable.gyan_bitan_publications,
+            R.drawable.rokomari_99, R.drawable.sikder_books_cornar};
+//BooksSubCatagories
     public CustomSubCatagoriesModel(List<String> subItem, List<Integer> subImage, int catagoriesPosition, int selectShopsTabs) {
         this.subItem = subItem;
         this.subImage = subImage;
@@ -37,9 +41,9 @@ public class CustomSubCatagoriesModel {
             if (selectShopTabs == 1) {//jodi shops tab e jai
                 subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
                 subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
-                for (int i = 0; i < bagsProvidersName.length; i++) {//set shops for bag catagories.
-                    this.subItem.add(bagsProvidersName[i]);
-                    this.subImage.add(bagsProvidersImage[i]);
+                for (int i = 0; i < bagsShopsName.length; i++) {//set shops for bag catagories.
+                    this.subItem.add(bagsShopsName[i]);
+                    this.subImage.add(bagsShopsImage[i]);
                 }
             } else {//jodi shops tab e na na jai
                 bagSubCatagories();//set sunCatagories for bag catagories.
@@ -49,12 +53,24 @@ public class CustomSubCatagoriesModel {
             if (selectShopTabs == 1) {//jodi shops tab e jai
                 subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
                 subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
-                for (int i = 0; i < bodyCareProvidersName.length; i++) {//set shops for bodyCare catagories
-                    this.subItem.add(bodyCareProvidersName[i]);
-                    this.subImage.add(bodyCareProvidersImage[i]);
+                for (int i = 0; i < bodyCareShopsName.length; i++) {//set shops for bodyCare catagories
+                    this.subItem.add(bodyCareShopsName[i]);
+                    this.subImage.add(bodyCareShopsImage[i]);
                 }
             } else {
                 bodyCareSubCtagories();//jodi shops tab e na na jai tahole sub catagories e jabe bodyCare catagories er jonno.
+            }
+        }
+        if (catagoriesPosition == 2) {//jodi Books click hoi
+            if (selectShopTabs == 1) {//jodi shops tab e jai
+                subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+                subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+                for (int i = 0; i < booksShopsName.length; i++) {//set shops for books catagories
+                    this.subItem.add(booksShopsName[i]);
+                    this.subImage.add(booksShopsImage[i]);
+                }
+            } else {
+               // booksSubCatagoriess();//jodi shops tab e na na jai tahole sub catagories e jabe books catagories er jonno.
             }
         }
     }
