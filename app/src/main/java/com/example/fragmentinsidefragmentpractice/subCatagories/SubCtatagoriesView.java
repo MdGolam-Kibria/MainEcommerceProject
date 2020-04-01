@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,11 +57,12 @@ public class SubCtatagoriesView extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));//numberOfColumns
         Toast.makeText(getContext(), "This is click position = " + Catagories.returnPosition, Toast.LENGTH_LONG).show();
         // niche CustomSubCatagoriesModel class dara ei fragment er moddhe "Catagories.returnPosition" er dara view load korechi
-        new CustomSubCatagoriesModel(item, image, Catagories.returnPosition,selectTabPosition);//set every catarories view
+        new CustomSubCatagoriesModel(item, image, Catagories.returnPosition, selectTabPosition);//set every catarories view
         CustomAdapter adapter = new CustomAdapter(getContext(), item, image);//recyclerView configurations.
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 20));
+
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {

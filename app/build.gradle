@@ -46,7 +46,5 @@ dependencies {
     implementation "com.mlsdev.animatedrv:library:1.0.1"
     //text color style
     implementation 'com.github.tushar09:Gradient-Textview:1.0'
-//Glide for image loader
-//    implementation 'com.github.bumptech.glide:glide:4.9.0'
-//    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
 }
