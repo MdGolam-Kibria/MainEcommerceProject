@@ -29,4 +29,11 @@ public class CustomSubCatagoriesModelResource {
             "Stationeries", "Text Books"};
     public static int booksSubCatagoriesImage[] = {R.drawable.bangali_books_on_interest, R.drawable.books_for_kids, R.drawable.english_books_on_interest,
             R.drawable.others_books, R.drawable.stationeries, R.drawable.text_books};
+    //Glasses shops
+    
+
+    //GlassesSubCatagories
+    public static String glassesSubCatagoriesName[] = {"Glasses For Men", "Glasses For Women", "Unisex Glasses"};
+    public static int glassesSubCatagoriesImage[] = {R.drawable.glasses_for_men, R.drawable.glasses_for_women, R.drawable.unisex_glasses};
+
 }
