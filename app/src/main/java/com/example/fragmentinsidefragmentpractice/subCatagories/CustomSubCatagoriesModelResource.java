@@ -30,10 +30,21 @@ public class CustomSubCatagoriesModelResource {
     public static int booksSubCatagoriesImage[] = {R.drawable.bangali_books_on_interest, R.drawable.books_for_kids, R.drawable.english_books_on_interest,
             R.drawable.others_books, R.drawable.stationeries, R.drawable.text_books};
     //Glasses shops
-    
-
+    public static String glassesShopsName[] = {"Boi Ghor", "BS Gatget BD", "Cittron", "Feri Wala", "Amazon Bd Ecommarce",
+            "Gyan Bitan Publication", "Rokomari 99", "Sikder Books Cornar", "Corner Vision", "Lolona Shop"};
+    public static int glassesShopsImage[] = {R.drawable.boi_ghor, R.drawable.bs_gatget_bd, R.drawable.cittron, R.drawable.feri_wala,
+            R.drawable.amazon_bd_ecommarce, R.drawable.gyan_bitan_publications,
+            R.drawable.rokomari_99, R.drawable.sikder_books_cornar, R.drawable.corner_vision, R.drawable.lolona_shop,};
     //GlassesSubCatagories
     public static String glassesSubCatagoriesName[] = {"Glasses For Men", "Glasses For Women", "Unisex Glasses"};
     public static int glassesSubCatagoriesImage[] = {R.drawable.glasses_for_men, R.drawable.glasses_for_women, R.drawable.unisex_glasses};
-
+    //MotherKidsAndToys shops
+    public static int motherKidsAndToysShopsImage[] = {};
+    public static String motherKidsAndToysShopsName[] = {};
+    //MotherKidsAndToysSubCatagories
+    public static String motherKidsAndToysSubCatagoriesName[] = {"Clothing & Accessories", "Diapering & Potty", "Feeding", "Kids Accessories",
+            "Kids Gear", "Kids Health Care", "Kids Personal\n Care", "Kids Safety", "Kids Shoes", "Maternity Care", "Nursery", "Toys & Games"};
+    public static int motherKidsAndToysSubCatagoriesImage[] = {R.drawable.clothing_and_accessories, R.drawable.diapering_and_potty, R.drawable.feeding,
+            R.drawable.kids_accessories, R.drawable.kids_gear, R.drawable.kids_health_care, R.drawable.kids_personal_care, R.drawable.kids_safety, R.drawable.kids_shoes,
+            R.drawable.maternity_care, R.drawable.nursery, R.drawable.toys_and_games};
 }

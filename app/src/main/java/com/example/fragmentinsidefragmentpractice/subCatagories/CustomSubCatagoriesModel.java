@@ -52,6 +52,30 @@ public class CustomSubCatagoriesModel {
                 booksSubCatagoriess();//jodi shops tab e na na jai tahole sub catagories e jabe books catagories er jonno.
             }
         }
+        if (catagoriesPosition == 3) {//jodi Glasses click hoi
+            if (selectShopTabs == 1) {//jodi shops tab e jai
+                subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+                subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+                for (int i = 0; i < CustomSubCatagoriesModelResource.glassesShopsName.length; i++) {//set glasses for books catagories
+                    this.subItem.add(CustomSubCatagoriesModelResource.glassesShopsName[i]);
+                    this.subImage.add(CustomSubCatagoriesModelResource.glassesShopsImage[i]);
+                }
+            } else {
+                glassesSubCatagoriess();//jodi shops tab e na na jai tahole sub catagories e jabe Glasses catagories er jonno.
+            }
+        }
+        if (catagoriesPosition == 4) {//jodi motherKidsAndToys click hoi
+            if (selectShopTabs == 1) {//jodi shops tab e jai
+                subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+                subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+//                for (int i = 0; i < CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesName.length; i++) {//set motherKidsAndToys for motherKidsAndToys catagories
+//                    this.subItem.add(CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesName[i]);
+//                    this.subImage.add(CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesImage[i]);
+//                }
+            } else {
+                motherKidsAndToysSubCatagoriess();//jodi shops tab e na na jai tahole sub catagories e jabe motherKidsAndToys catagories er jonno.
+            }
+        }
     }
 
     private void bagSubCatagories() {
@@ -79,6 +103,24 @@ public class CustomSubCatagoriesModel {
         for (int i = 0; i < CustomSubCatagoriesModelResource.booksSubCatagoriesName.length; i++) {//set books for books catagories
             this.subItem.add(CustomSubCatagoriesModelResource.booksSubCatagoriesName[i]);
             this.subImage.add(CustomSubCatagoriesModelResource.booksSubCatagoriesImage[i]);
+        }
+    }
+
+    private void glassesSubCatagoriess() {
+        subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+        subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+        for (int i = 0; i < CustomSubCatagoriesModelResource.glassesSubCatagoriesName.length; i++) {//set glasses for glasses catagories
+            this.subItem.add(CustomSubCatagoriesModelResource.glassesSubCatagoriesName[i]);
+            this.subImage.add(CustomSubCatagoriesModelResource.glassesSubCatagoriesImage[i]);
+        }
+    }
+
+    private void motherKidsAndToysSubCatagoriess() {
+        subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
+        subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
+        for (int i = 0; i < CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesName.length; i++) {//set motherKidsAndToys for motherKidsAndToys catagories
+            this.subItem.add(CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesName[i]);
+            this.subImage.add(CustomSubCatagoriesModelResource.motherKidsAndToysSubCatagoriesImage[i]);
         }
     }
 }

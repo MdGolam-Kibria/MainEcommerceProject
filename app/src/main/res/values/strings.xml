@@ -12,18 +12,4 @@
     <string name="title_activity_sub_catagories">SubCatagories</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
-    <!--    <string-array name="recyclerItem">-->
-    <!--        <item>Bags</item>-->
-    <!--        <item>BodyCare</item>-->
-    <!--        <item>Books</item>-->
-    <!--        <item>Construction materials</item>-->
-    <!--        <item>decoration</item>-->
-    <!--        <item>Digital Goods</item>-->
-    <!--        <item>Electric</item>-->
-    <!--        <item>Event</item>-->
-    <!--        <item>Woman Fashion</item>-->
-    <!--        <item>Man Fashion</item>-->
-    <!--        <item>Furniture</item>-->
-    <!--    </string-array>-->
 </resources>
