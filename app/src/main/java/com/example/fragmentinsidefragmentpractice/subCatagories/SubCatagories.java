@@ -35,7 +35,6 @@ public class SubCatagories extends Fragment {
     ViewPager viewPager;
     TextView subCatagories, shops;
 
-
     public SubCatagories() {
         // Required empty public constructor
     }
@@ -64,12 +63,15 @@ public class SubCatagories extends Fragment {
         });
 
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
+
+
             @NonNull
             @Override
             public Fragment getItem(int position) {
                 switch (position) {
                     case 0:
-                        return new SubCtatagoriesView();
+                        return new SubCtatagoriesView(0);
+
                     case 1:
                         return new SubCtatagoriesView(1);// Parameter 1 dissi ai jonno je tablayout with viewPager er 2 number tab er load er source hisebe dewa.
                 }

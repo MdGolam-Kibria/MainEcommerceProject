@@ -1,7 +1,5 @@
 package com.example.fragmentinsidefragmentpractice.subCatagories;
 
-import com.example.fragmentinsidefragmentpractice.R;
-
 import java.util.List;
 
 public class CustomSubCatagoriesModel {
@@ -10,6 +8,13 @@ public class CustomSubCatagoriesModel {
     List<Integer> subImage;
     int catagoriesPosition;
     int selectShopTabs;
+
+    public static int SELECT_TAB_FOR_SHOP;
+    public static int SELECT_TAB_FOR_CATAGORIES;
+
+    public CustomSubCatagoriesModel() {
+    }
+
 
     public CustomSubCatagoriesModel(List<String> subItem, List<Integer> subImage, int catagoriesPosition, int selectShopsTabs) {
         this.subItem = subItem;
@@ -24,7 +29,9 @@ public class CustomSubCatagoriesModel {
                     this.subItem.add(CustomSubCatagoriesModelResource.bagsShopsName[i]);
                     this.subImage.add(CustomSubCatagoriesModelResource.bagsShopsImage[i]);
                 }
+                SELECT_TAB_FOR_SHOP = 1;
             } else {//jodi shops tab e na na jai
+                SELECT_TAB_FOR_CATAGORIES = 0;
                 bagSubCatagories();//set sunCatagories for bag catagories.
             }
         }
@@ -81,7 +88,6 @@ public class CustomSubCatagoriesModel {
     }
 
     private void bagSubCatagories() {
-
         subItem.removeAll(subItem);//list e ja store ase sob clear korar jonno
         subImage.removeAll(subImage);//list e ja store ase sob clear korar jonno
         for (int i = 0; i < CustomSubCatagoriesModelResource.bagSubCatagoriesName.length; i++) {

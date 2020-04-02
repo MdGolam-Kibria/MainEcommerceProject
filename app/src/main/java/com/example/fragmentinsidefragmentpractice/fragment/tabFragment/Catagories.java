@@ -27,7 +27,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class Catagories extends Fragment {
-    public static int returnPosition;
+    public static int catagoriesItemPosition;
 
     private RecyclerView recyclerView;
     FragmentActivity fragmentActivity = getActivity();
@@ -89,12 +89,12 @@ public class Catagories extends Fragment {
 
         CustomAdapter adapter = new CustomAdapter(getContext(), item, image);
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
-        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 20));
+        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 40));
+        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 50));
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                returnPosition = position;
+                catagoriesItemPosition = position;
                 Toast.makeText(getContext(), "" + item.get(position), Toast.LENGTH_SHORT).show();
                 moveSubCatagories();//for move sub catagories fragment
             }

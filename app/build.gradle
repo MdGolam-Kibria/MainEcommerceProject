@@ -23,6 +23,9 @@ android {
     }
 
 }
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -46,5 +49,7 @@ dependencies {
     implementation "com.mlsdev.animatedrv:library:1.0.1"
     //text color style
     implementation 'com.github.tushar09:Gradient-Textview:1.0'
+//for Recycler Image
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 
 }

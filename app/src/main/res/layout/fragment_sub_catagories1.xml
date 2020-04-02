@@ -5,29 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".subCatagories.SubCatagories">
-<!--    <TextView-->
-<!--        android:id="@+id/subCatagoriesTitle"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        android:text="Bag sub Catagories"-->
-<!--        android:textSize="25dp"-->
-<!--        android:textStyle="bold"-->
-<!--        tools:ignore="MissingConstraints" />-->
 
+    <include layout="@layout/tabs_for_sub_catagories" />
 
-        <include layout="@layout/tabs_for_sub_catagories" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagerForSubCatagories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recyclerViewBagSubCatagories"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginTop="10dp" />-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerForSubCatagories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
