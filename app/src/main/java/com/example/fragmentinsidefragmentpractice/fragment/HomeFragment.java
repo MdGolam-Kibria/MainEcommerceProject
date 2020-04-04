@@ -27,8 +27,7 @@ import com.google.android.material.tabs.TabLayout;
 public class HomeFragment extends Fragment {
     View view;
     ViewPager viewPager;
-//    TabLayout tabLayout;
-    TextView catagoriesTab, brandsTab, shopsTab;
+    TabLayout tabLayout;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -41,37 +40,28 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        tabLayout = view.findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.categories));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.brands));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.shops));
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer()); //here view pager animations.
-
-        catagoriesTab = view.findViewById(R.id.categories);
-        brandsTab = view.findViewById(R.id.brands);
-        shopsTab = view.findViewById(R.id.shops);
-        Tvg.change((TextView) catagoriesTab, new int[]{
-                Color.parseColor("#F97C3C"),
-                Color.parseColor("#FDB54E"),
-                Color.parseColor("#64B678"),
-                Color.parseColor("#478AEA"),
-                Color.parseColor("#8446CC"),
-        });
-        catagoriesTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(0);
-            }
-        });
-        brandsTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(1);
-            }
-        });
-        shopsTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(2);
-            }
-        });
 
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
             @NonNull
@@ -94,6 +84,7 @@ public class HomeFragment extends Fragment {
             }
         };
         viewPager.setAdapter(fragmentPagerAdapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -102,7 +93,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                selectTabs(position);
+                //if you want to more change here
             }
 
             @Override
@@ -110,43 +101,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
         return view;
-
     }
-
-
-    @SuppressLint("ResourceAsColor")
-    private void selectTabs(int position) {
-        if (position == 0) {
-             Tvg.change((TextView) catagoriesTab, new int[]{
-                    Color.parseColor("#F97C3C"),
-                    Color.parseColor("#FDB54E"),
-                    Color.parseColor("#64B678"),
-                    Color.parseColor("#478AEA"),
-                    Color.parseColor("#8446CC"),
-            });
-            catagoriesTab.setTextSize(20f);
-            brandsTab.setTextColor(R.color.black);
-            shopsTab.setTextColor(R.color.black);
-        }
-        if (position == 1) {
-            Tvg.change((TextView) brandsTab, new int[]{
-                    Color.parseColor("#F97C3C"),
-                    Color.parseColor("#FDB54E"),
-                    Color.parseColor("#64B678"),
-                    Color.parseColor("#478AEA"),
-                    Color.parseColor("#8446CC"),
-            });
-            brandsTab.setTextSize(20f);
-            catagoriesTab.setTextColor(R.color.black);
-            shopsTab.setTextColor(R.color.black);
-        }
-        if (position == 2) {
-//            brandsTab.setTextColor(R.color.tab);
-//            catagoriesTab.setTextColor(R.color.tab);
-        }
-    }
-
-
 }

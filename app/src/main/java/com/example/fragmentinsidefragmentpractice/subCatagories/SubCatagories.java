@@ -23,6 +23,7 @@ import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Shops;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,7 @@ public class SubCatagories extends Fragment {
 
     View view;
     ViewPager viewPager;
-    TextView subCatagories, shops;
+    TabLayout tabLayout;
 
     public SubCatagories() {
         // Required empty public constructor
@@ -44,23 +45,27 @@ public class SubCatagories extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_sub_catagories1, container, false);
-        subCatagories = view.findViewById(R.id.subCategories);
-        shops = view.findViewById(R.id.shops);
+        tabLayout = view.findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("Sub Categories"));
+        tabLayout.addTab(tabLayout.newTab().setText("Shops"));
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
         viewPager = view.findViewById(R.id.viewPagerForSubCatagories);
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer()); //here view pager animations.
-
-        subCatagories.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(0);
-            }
-        });
-        shops.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(1);
-            }
-        });
 
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
 
@@ -84,6 +89,7 @@ public class SubCatagories extends Fragment {
             }
         };
         viewPager.setAdapter(fragmentPagerAdapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

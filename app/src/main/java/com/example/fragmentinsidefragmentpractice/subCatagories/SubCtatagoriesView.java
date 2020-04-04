@@ -61,7 +61,7 @@ public class SubCtatagoriesView extends Fragment {
                 if (Catagories.catagoriesItemPosition == 0 && CustomSubCatagoriesModel.SELECT_TAB_FOR_CATAGORIES == 0) {//for bag catagories
                     Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
                 }
-               // if (Catagories.catagoriesItemPosition == 0 && CustomSubCatagoriesModel.SELECT_TAB_FOR_SHOP == 1) {//for bag shops
+                // if (Catagories.catagoriesItemPosition == 0 && CustomSubCatagoriesModel.SELECT_TAB_FOR_SHOP == 1) {//for bag shops
                 //    Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagsShopsName[position], Toast.LENGTH_LONG).show();
                 //}
             }
