@@ -47,46 +47,15 @@ public class Catagories extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewCatagories);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(fragmentActivity, 3));//numberOfColumns
+
         List<Integer> image = new ArrayList<>();
-        image.add(R.drawable.bag);
-        image.add(R.drawable.body_care);
-        image.add(R.drawable.book);
-        image.add(R.drawable.glass);
-        image.add(R.drawable.mother_kids_toys);
-        image.add(R.drawable.sports);
-        image.add(R.drawable.vehicles_parts);
-        image.add(R.drawable.home_living);
-        image.add(R.drawable.home_appliance);
-        image.add(R.drawable.grocery);
-        image.add(R.drawable.construction_material);
-        image.add(R.drawable.decoration_material);
-        image.add(R.drawable.digital_good);
-        image.add(R.drawable.eletric);
-        image.add(R.drawable.watch_clock);
-        image.add(R.drawable.woman_fashion);
-        image.add(R.drawable.man_fashion);
-        image.add(R.drawable.furniture);
-
+        for (int i=0;i<TabUtil.categoriesImage.length;i++){
+            image.add(TabUtil.categoriesImage[i]);
+        }
         final List<String> item = new ArrayList<>();
-        item.add("Bags");
-        item.add("BodyCare");
-        item.add("Books");
-        item.add("Glasses");
-        item.add(getString(R.string.motherKidsToys));
-        item.add("Sports");
-        item.add("vehicles & parts");
-        item.add("Home & Living");
-        item.add("Home Appliance");
-        item.add("Grocery");
-        item.add("Construction materials");
-        item.add("Decoration");
-        item.add("Digital Goods");
-        item.add("Electric & Parts");
-        item.add("Watch & Clock");
-        item.add("Woman Fashion");
-        item.add("Man Fashion");
-        item.add("Furniture");
-
+        for (int i=0;i<TabUtil.catagoriesItems.length;i++){
+            item.add(TabUtil.catagoriesItems[i]);
+        }
         CustomAdapter adapter = new CustomAdapter(getContext(), item, image);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 40));

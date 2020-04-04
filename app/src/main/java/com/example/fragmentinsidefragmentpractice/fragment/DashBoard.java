@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.fragmentinsidefragmentpractice.MainActivity;
 import com.example.fragmentinsidefragmentpractice.R;
+import com.example.fragmentinsidefragmentpractice.adminPanel.AdminWelcome;
 import com.example.fragmentinsidefragmentpractice.authorizationAndAuthentication.ResisterFragment;
 import com.example.fragmentinsidefragmentpractice.util.UseUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -84,14 +85,23 @@ public class DashBoard extends Fragment implements View.OnClickListener {
         if (v.getId() == R.id.login) {
             String userPhone = phone.getText().toString();
             String userPassword = password.getText().toString();
-            if (userPassword.isEmpty() || userPassword.length() <= 8) {
-                password.setError("Must have 9 character");
-                password.requestFocus();
-            }
-            if (userPhone.length() != 11 || userPhone.isEmpty() || !userPhone.startsWith("01")) {
-                phone.setError("Must have 11 charecter");
-                phone.requestFocus();
-            }
+
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction()
+                        .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil.changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
+                transaction.replace(R.id.fragment, new AdminWelcome(), "mm").addToBackStack(null).commit();
+
+
+        }
+
+//            if (userPassword.isEmpty() || userPassword.length() <= 8) {
+//                password.setError("Must have 9 character");
+//                password.requestFocus();
+//            }
+//            if (userPhone.length() != 11 || userPhone.isEmpty() || !userPhone.startsWith("01")) {
+//                phone.setError("Must have 11 charecter");
+//                phone.requestFocus();
+//            }
             //connect to firebase
 
 //            mAuth.signInWithEmailAndPassword(userPhone, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -104,7 +114,7 @@ public class DashBoard extends Fragment implements View.OnClickListener {
 //                    }
 //                }
 //            });
-        }
+
         if (v.getId() == R.id.resister) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction()
                     .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil.changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
