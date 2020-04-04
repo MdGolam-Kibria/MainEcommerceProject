@@ -16,6 +16,7 @@ import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Catagorie
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class SubCtatagoriesView extends Fragment {
     List<Integer> image = new ArrayList<>();
     List<String> item = new ArrayList<>();
     int selectTabPosition; //2 num tab a click er source constructor theke set kora
+
 
     public SubCtatagoriesView() {
 
@@ -58,12 +60,16 @@ public class SubCtatagoriesView extends Fragment {
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                if (Catagories.catagoriesItemPosition == 0 && CustomSubCatagoriesModel.SELECT_TAB_FOR_CATAGORIES == 0) {//for bag catagories
-                    Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
+                if (Catagories.catagoriesItemPosition == 0) {//for bag catagories
+                    if (selectTabPosition == 0) {
+                        Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
+                    }
+                    if (selectTabPosition == 1) {
+                        Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagsShopsName[position], Toast.LENGTH_LONG).show();
+                    }
+
                 }
-                // if (Catagories.catagoriesItemPosition == 0 && CustomSubCatagoriesModel.SELECT_TAB_FOR_SHOP == 1) {//for bag shops
-                //    Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagsShopsName[position], Toast.LENGTH_LONG).show();
-                //}
+
             }
 
             @Override

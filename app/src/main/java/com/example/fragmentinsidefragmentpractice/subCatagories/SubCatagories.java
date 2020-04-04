@@ -40,6 +40,7 @@ public class SubCatagories extends Fragment {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,10 +49,12 @@ public class SubCatagories extends Fragment {
         tabLayout = view.findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Sub Categories"));
         tabLayout.addTab(tabLayout.newTab().setText("Shops"));
+        new SubCtatagoriesView(tabLayout.getSelectedTabPosition());
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+
             }
 
             @Override
