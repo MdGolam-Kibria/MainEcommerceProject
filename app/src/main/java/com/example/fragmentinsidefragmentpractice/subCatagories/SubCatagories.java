@@ -49,7 +49,7 @@ public class SubCatagories extends Fragment {
         tabLayout = view.findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Sub Categories"));
         tabLayout.addTab(tabLayout.newTab().setText("Shops"));
-        new SubCtatagoriesView(tabLayout.getSelectedTabPosition());
+        new SubCtatagoriesView(tabLayout.getSelectedTabPosition());//send select tab position
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
