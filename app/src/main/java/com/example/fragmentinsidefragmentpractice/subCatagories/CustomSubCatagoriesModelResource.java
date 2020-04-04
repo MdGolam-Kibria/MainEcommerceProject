@@ -5,8 +5,8 @@ import com.example.fragmentinsidefragmentpractice.R;
 public class CustomSubCatagoriesModelResource {
     //bagSubCatagories
     public static String bagSubCatagoriesName[] = {"Backpack", "Card Holders", "Clutches", "Designers Bag", "Crossbody Bags", "Office Bag", "Shoulder Bag", "Wallets", "Kids School Bags", "Laptop & Tablet Bag"};
-    public static int bagSubCatagoriesImage[] = {R.drawable.bath_and_body, R.drawable.beauty_tools, R.drawable.beauty_tools2, R.drawable.facial_cleansing_brushes, R.drawable.fragrances,
-            R.drawable.gift_sets, R.drawable.hair_care, R.drawable.makeupball, R.drawable.mans_care, R.drawable.sexul_wellness, R.drawable.skin_and_beauty_care};
+    public static int bagSubCatagoriesImage[] = {R.drawable.bag, R.drawable.card_holders, R.drawable.clutches, R.drawable.designers_bag, R.drawable.cross_body_bags,
+            R.drawable.office_bag, R.drawable.shoulder, R.drawable.wallets, R.drawable.kids_school_bags, R.drawable.laptop_and_tablet_bags};
     //bag shops
     public static String bagsShopsName[] = {"amazonBdEcomarce", "eshaShop", "khanPrintingMuseum", "shoppersHubBd", "superMarketBd"};
     public static int bagsShopsImage[] = {R.drawable.amazon_bd_ecommarce, R.drawable.esha_shop, R.drawable.khan_printing_museum, R.drawable.shoppers_hub_bd,

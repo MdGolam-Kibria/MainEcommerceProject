@@ -44,7 +44,7 @@
                         android:layout_height="wrap_content"
                         app:tabTextAppearance="@style/MyCustomTextAppearance"
                         app:tabGravity="fill"
-                        app:tabIndicatorColor="#F12222"
+                        app:tabIndicatorColor="#6200EE"
                         app:tabMode="fixed" />
                 </com.google.android.material.appbar.AppBarLayout>
 

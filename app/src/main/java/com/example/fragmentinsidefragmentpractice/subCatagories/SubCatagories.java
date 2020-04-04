@@ -68,8 +68,6 @@ public class SubCatagories extends Fragment {
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer()); //here view pager animations.
 
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
-
-
             @NonNull
             @Override
             public Fragment getItem(int position) {
