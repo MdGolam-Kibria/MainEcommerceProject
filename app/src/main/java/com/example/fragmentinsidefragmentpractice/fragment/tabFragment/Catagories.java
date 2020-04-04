@@ -48,11 +48,11 @@ public class Catagories extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(fragmentActivity, 3));//numberOfColumns
 
-        List<Integer> image = new ArrayList<>();
+        List<Integer> image = new ArrayList<>();//for add categories image.
         for (int i=0;i<TabUtil.categoriesImage.length;i++){
             image.add(TabUtil.categoriesImage[i]);
         }
-        final List<String> item = new ArrayList<>();
+        final List<String> item = new ArrayList<>();//for add categories item.
         for (int i=0;i<TabUtil.catagoriesItems.length;i++){
             item.add(TabUtil.catagoriesItems[i]);
         }
