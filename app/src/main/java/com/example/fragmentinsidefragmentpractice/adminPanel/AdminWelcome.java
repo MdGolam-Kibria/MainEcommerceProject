@@ -15,6 +15,7 @@ import android.widget.Spinner;
 
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Catagories;
+import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.TabUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,13 +71,13 @@ public class AdminWelcome extends Fragment implements View.OnClickListener {
     }
 
     private void selectItemForCategories_Brands_Shops() {
-        int item = 50;
-        List<Integer> allItemIndex = new ArrayList<Integer>();
-        for (int i = 0; i <= item; i++){
-            allItemIndex.add(i);
+
+        List<String> allItemIndexList = new ArrayList<String>();
+        for (int i = 0; i < TabUtil.catagoriesItemsLength; i++) {
+            allItemIndexList.add(TabUtil.catagoriesItems[i]);
         }
-        ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(getContext(),
-                android.R.layout.simple_spinner_item, allItemIndex);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item, allItemIndexList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         selectItemForC_B_Shops.setAdapter(dataAdapter);
     }

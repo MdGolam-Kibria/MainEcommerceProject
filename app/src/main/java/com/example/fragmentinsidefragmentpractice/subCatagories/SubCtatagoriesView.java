@@ -3,6 +3,8 @@ package com.example.fragmentinsidefragmentpractice.subCatagories;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,11 +14,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.fragmentinsidefragmentpractice.R;
+import com.example.fragmentinsidefragmentpractice.fragment.subCategoriesAllOtemProducts.SubCategoriesAllItemsProducts;
 import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Catagories;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +28,10 @@ import java.util.List;
  */
 public class SubCtatagoriesView extends Fragment {
     View view;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView, recyclerViewForSubCatagoriesItemAll;
     List<Integer> image = new ArrayList<>();
     List<String> item = new ArrayList<>();
     int selectTabPosition; //2 num tab a click er source constructor theke set kora
-
 
     public SubCtatagoriesView() {
 
@@ -47,13 +48,14 @@ public class SubCtatagoriesView extends Fragment {
         view = inflater.inflate(R.layout.fragment_sub_ctatagories_view, container, false);
         //  ((AppCompatActivity) getActivity()).getSupportActionBar().hide();//for hide activity action bar.
         recyclerView = view.findViewById(R.id.recyclerViewForSubCatagories);
+        //recyclerViewForSubCatagoriesItemAll = view.findViewById(R.id.recyclerViewForSubCatagoriesItemAll);
         // textView = view.findViewById(R.id.subCatagoriesTitle);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));//numberOfColumns
         Toast.makeText(getContext(), "This is click position = " + Catagories.catagoriesItemPosition, Toast.LENGTH_LONG).show();
         // niche CustomSubCatagoriesModel class dara ei fragment er moddhe "Catagories.returnPosition" er dara view load korechi
         new CustomSubCatagoriesModel(item, image, Catagories.catagoriesItemPosition, selectTabPosition);//set every catarories view
-        CustomAdapter adapter = new CustomAdapter(getContext(), item, image);//recyclerView configurations.
+        final CustomAdapter adapter = new CustomAdapter(getContext(), item, image);//recyclerView configurations.
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
         recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 20));
@@ -62,14 +64,16 @@ public class SubCtatagoriesView extends Fragment {
             public void onClick(View view, int position) {
                 if (Catagories.catagoriesItemPosition == 0) {//for bag catagories
                     if (selectTabPosition == 0) {
-                        Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
+                        String itemposition = CustomSubCatagoriesModelResource.bagSubCatagoriesName[position];
+                        if (itemposition.equals("Backpack")) {
+                            Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
+                            moveSubCategoriesItemView();//move to show all products.
+                        }
                     }
                     if (selectTabPosition == 1) {
                         Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagsShopsName[position], Toast.LENGTH_LONG).show();
                     }
-
                 }
-
             }
 
             @Override
@@ -79,4 +83,13 @@ public class SubCtatagoriesView extends Fragment {
         }));
         return view;
     }
+
+    private FragmentTransaction moveSubCategoriesItemView() {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.viewPagerForSubCatagories, new SubCategoriesAllItemsProducts())
+                .addToBackStack(null).commit();
+        return fragmentTransaction;
+    }
 }
+

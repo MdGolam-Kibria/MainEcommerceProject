@@ -1,16 +1,16 @@
 package com.example.fragmentinsidefragmentpractice;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.example.fragmentinsidefragmentpractice.fragment.Cart;
 import com.example.fragmentinsidefragmentpractice.fragment.DashBoard;

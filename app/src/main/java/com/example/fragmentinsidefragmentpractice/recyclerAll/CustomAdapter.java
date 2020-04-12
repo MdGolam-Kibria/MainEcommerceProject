@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragmentinsidefragmentpractice.R;
+import com.example.fragmentinsidefragmentpractice.subCatagories.CustomSubCatagoriesModelResource;
 
 import java.util.List;
 
@@ -33,12 +34,21 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolderData> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderData holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolderData holder, int position) {
         String currentItem = item.get(position);
         Integer currentImage = image.get(position);
         holder.sampleText.setText(currentItem);
         holder.sampleImage.setImageResource(currentImage);
 
+//        below logic is right logic
+//        if (CustomSubCatagoriesModelResource.bagSubCatagoriesName[position].equals("Backpack")) {
+//            holder.sampleImage.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    holder.sampleImage.setImageResource(R.drawable.amazon_bd_ecommarce);
+//                }
+//            });
+//        }
     }
 
     @Override

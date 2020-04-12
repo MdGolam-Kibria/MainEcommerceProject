@@ -5,28 +5,17 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.animation.ZoomOutPageTransformer;
-import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Brands;
-import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Catagories;
-import com.example.fragmentinsidefragmentpractice.fragment.tabFragment.Shops;
-import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
-import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
-import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class SubCatagories extends Fragment {
@@ -35,6 +24,9 @@ public class SubCatagories extends Fragment {
     View view;
     ViewPager viewPager;
     TabLayout tabLayout;
+
+   LinearLayout subCaItem;
+
 
     public SubCatagories() {
         // Required empty public constructor
@@ -45,7 +37,9 @@ public class SubCatagories extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_sub_catagories1, container, false);
+
         tabLayout = view.findViewById(R.id.tabLayout);
+        subCaItem = view.findViewById(R.id.subCatagoriesItem);
         tabLayout.addTab(tabLayout.newTab().setText("Sub Categories"));
         tabLayout.addTab(tabLayout.newTab().setText("Shops"));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -75,7 +69,6 @@ public class SubCatagories extends Fragment {
                 switch (position) {
                     case 0:
                         return new SubCtatagoriesView(0);
-
                     case 1:
                         return new SubCtatagoriesView(1);// Parameter 1 dissi ai jonno je tablayout with viewPager er 2 number tab er load er source hisebe dewa.
                 }
@@ -107,5 +100,9 @@ public class SubCatagories extends Fragment {
         });
 
         return view;
+    }
+
+    class SubClass {
+
     }
 }

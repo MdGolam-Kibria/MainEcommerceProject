@@ -11,7 +11,6 @@ public class CustomSubCatagoriesModel {
 
     public CustomSubCatagoriesModel() {
     }
-
     public CustomSubCatagoriesModel(List<String> subItem, List<Integer> subImage, int catagoriesPosition, int selectShopsTabs) {
         this.subItem = subItem;
         this.subImage = subImage;
