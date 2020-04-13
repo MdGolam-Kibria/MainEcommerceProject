@@ -19,7 +19,7 @@ import com.example.fragmentinsidefragmentpractice.fragment.WishList;
 import com.example.fragmentinsidefragmentpractice.util.UseUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-
+//This is main method.
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     FrameLayout fragment;
     BottomNavigationView bottomNavigationView;
