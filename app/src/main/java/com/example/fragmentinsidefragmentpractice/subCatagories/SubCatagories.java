@@ -101,8 +101,4 @@ public class SubCatagories extends Fragment {
 
         return view;
     }
-
-    class SubClass {
-
-    }
 }

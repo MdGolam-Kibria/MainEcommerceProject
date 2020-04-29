@@ -32,6 +32,7 @@ public class SubCtatagoriesView extends Fragment {
     List<Integer> image = new ArrayList<>();
     List<String> item = new ArrayList<>();
     int selectTabPosition; //2 num tab a click er source constructor theke set kora
+    String itempositionName;
 
     public SubCtatagoriesView() {
 
@@ -57,21 +58,25 @@ public class SubCtatagoriesView extends Fragment {
         new CustomSubCatagoriesModel(item, image, Catagories.catagoriesItemPosition, selectTabPosition);//set every catarories view
         final CustomAdapter adapter = new CustomAdapter(getContext(), item, image);//recyclerView configurations.
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
-        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 20));
+       // recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
+        //recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 20));
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
                 if (Catagories.catagoriesItemPosition == 0) {//for bag catagories
                     if (selectTabPosition == 0) {
-                        String itemposition = CustomSubCatagoriesModelResource.bagSubCatagoriesName[position];
-                        if (itemposition.equals("Backpack")) {
+                        itempositionName = CustomSubCatagoriesModelResource.bagSubCatagoriesName[position];
+                        if (itempositionName.equals("Backpack")) {
                             Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
-                            moveSubCategoriesItemView();//move to show all products.
+                            moveSubCategoriesItemView(selectTabPosition, itempositionName);//move to show all products.
                         }
                     }
-                    if (selectTabPosition == 1) {
-                        Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagsShopsName[position], Toast.LENGTH_LONG).show();
+                    if (selectTabPosition == 0) {
+                        itempositionName = CustomSubCatagoriesModelResource.bagSubCatagoriesName[position];
+                        if (itempositionName.equals("Card Holders")) {
+                            Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
+                            moveSubCategoriesItemView(selectTabPosition, itempositionName);//move to show all products.
+                        }
                     }
                 }
             }
@@ -84,10 +89,10 @@ public class SubCtatagoriesView extends Fragment {
         return view;
     }
 
-    private FragmentTransaction moveSubCategoriesItemView() {
-        FragmentManager fragmentManager = getFragmentManager();
+    private FragmentTransaction moveSubCategoriesItemView(int selectTabPosition, String itempositionName) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.viewPagerForSubCatagories, new SubCategoriesAllItemsProducts())
+        fragmentTransaction.replace(R.id.fragment, new SubCategoriesAllItemsProducts(selectTabPosition, itempositionName))
                 .addToBackStack(null).commit();
         return fragmentTransaction;
     }

@@ -2,6 +2,7 @@ package com.example.fragmentinsidefragmentpractice;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -31,6 +32,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //if you want to off screen screen short in your app just write the below line
+        //but i want to comment the line now cause for the line my pc screen share does't work
+//         so...
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);//screen short off code
+
         setContentView(R.layout.activity_main);
         this.setTitle("Evaly");
         findAllView();

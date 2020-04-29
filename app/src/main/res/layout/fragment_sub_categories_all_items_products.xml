@@ -5,14 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".fragment.subCategoriesAllOtemProducts.SubCategoriesAllItemsProducts">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Show your products here" />
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/mainItemProductRecyclerView"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 
 </LinearLayout>
