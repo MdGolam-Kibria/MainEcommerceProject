@@ -1,5 +1,7 @@
-# MainEcommerceProject
-This is main evaly ecommerce android project
+# MainEcommerceProject.
+This is main evaly ecommerce android project.
+<h1> language Java</h1>
 <h1>This is main Ecommerce Project like evally </h1>
-- using firebase backend system.</br>
-- more features comming 
+- Using firebase backend system.</br>
+- More features comming because now i working this project.
+
