@@ -69,6 +69,9 @@ public class SubCtatagoriesView extends Fragment {
                         if (itempositionName.equals("Backpack")) {
                             Toast.makeText(getContext(), "" + CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_LONG).show();
                             moveSubCategoriesItemView(selectTabPosition, itempositionName);//move to show all products.
+                        }else if (itempositionName.equals("Card Holders")){
+                            Toast.makeText(getContext(), ""+CustomSubCatagoriesModelResource.bagSubCatagoriesName[position], Toast.LENGTH_SHORT).show();
+                            moveSubCategoriesItemView(selectTabPosition,itempositionName);
                         }
                     }
                     if (selectTabPosition == 0) {

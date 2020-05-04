@@ -2,7 +2,6 @@ package com.example.fragmentinsidefragmentpractice.fragment.subCategoriesAllOtem
 
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,16 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fragmentinsidefragmentpractice.R;
-import com.example.fragmentinsidefragmentpractice.recyclerAll.CustomAdapter;
 import com.example.fragmentinsidefragmentpractice.recyclerAll.adapterForMainProductShow.CustomAdapterFormainProductShow;
-import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.fragmentinsidefragmentpractice.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
 import com.example.fragmentinsidefragmentpractice.subCatagories.CustomSubCatagoriesModelResource;
-import com.example.fragmentinsidefragmentpractice.subCatagories.SubCatagories;
+import com.example.fragmentinsidefragmentpractice.subCatagories.sub_subCatagoriesAll.CustomSub_subCatagoriesModelResource;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,12 +47,18 @@ public class SubCategoriesAllItemsProducts extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_sub_categories_all_items_products, container, false);
-        addProduct();
+        if (selecttabPosition == 0) {
+            if (itemPositionName.equals("Backpack")){
+                addBackPackSubCatagoriesProducts();
+            }else if (itemPositionName.equals("Card Holders")) {
+                addCardHoldersSubCatagoriesProduct();
+            }
+        }
         recyclerView = view.findViewById(R.id.mainItemProductRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));//numberOfColumns
 //        final CustomAdapter adapter = new CustomAdapter(getContext(), item, image);
-        final CustomAdapterFormainProductShow adapter = new CustomAdapterFormainProductShow(getContext(),productImage,productDescription,productCost);
+        final CustomAdapterFormainProductShow adapter = new CustomAdapterFormainProductShow(getContext(), productImage, productDescription, productCost);
         recyclerView.setAdapter(adapter);
         //recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.HORIZONTAL, 16));
         //recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), GridLayoutManager.VERTICAL, 20));
@@ -75,7 +77,15 @@ public class SubCategoriesAllItemsProducts extends Fragment {
         return view;
     }
 
-    private void addProduct() {
+    private void addCardHoldersSubCatagoriesProduct() {
+        for (int i = 0;i< CustomSub_subCatagoriesModelResource.cardHoldersSubCatagoriesName.length;i++){
+            productImage.add(CustomSub_subCatagoriesModelResource.cardHoldersSubCatagoriesImage[i]);
+            productDescription.add(CustomSub_subCatagoriesModelResource.cardHoldersSubCatagoriesName[i]);
+            productCost.add(CustomSub_subCatagoriesModelResource.cardHoldersSubCatagoriesName[i]);
+        }
+    }
+
+    private void addBackPackSubCatagoriesProducts() {
         for (int i = 0; i < CustomSubCatagoriesModelResource.bagSubCatagoriesImage.length; i++) {
             productImage.add(CustomSubCatagoriesModelResource.bagSubCatagoriesImage[i]);
             productDescription.add(CustomSubCatagoriesModelResource.bagSubCatagoriesName[i]);
