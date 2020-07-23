@@ -2,6 +2,7 @@ package com.example.fragmentinsidefragmentpractice.authorizationAndAuthenticatio
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,8 +19,12 @@ import com.example.fragmentinsidefragmentpractice.OTP.SetOTPcodeAndPassword;
 import com.example.fragmentinsidefragmentpractice.R;
 import com.example.fragmentinsidefragmentpractice.model.UserPojo;
 import com.example.fragmentinsidefragmentpractice.util.UseUtil;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,7 +35,7 @@ public class ResisterFragment extends Fragment implements View.OnClickListener {
     CheckBox checkBox;
     Button signUp;
     DatabaseReference databaseReference;
-
+    String code;
     public ResisterFragment() {
         // Required empty public constructor
     }
@@ -83,8 +88,10 @@ public class ResisterFragment extends Fragment implements View.OnClickListener {
         if (checkBox.isChecked()) {
             if (invitationCode.getText().toString().equals(null)) {
                 databaseReference.child(key).setValue(new UserPojo(name.getText().toString(), phone.getText().toString()));
+//                OTPAuth();
             } else if (!invitationCode.getText().toString().equals(null)) {
                 databaseReference.child(key).setValue(new UserPojo(name.getText().toString(), phone.getText().toString(), invitationCode.getText().toString()));
+//                OTPAuth();
             }
             Toast.makeText(getContext(), "data added", Toast.LENGTH_LONG).show();
             //after all check
@@ -96,4 +103,25 @@ public class ResisterFragment extends Fragment implements View.OnClickListener {
             Toast.makeText(getContext(), "Please agree with our trams and conditions", Toast.LENGTH_SHORT).show();
         }
     }
-}
+
+//    private void OTPAuth() {
+//        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+//                "+88" + phone.getText().toString().trim(),// Phone number to verify
+//                60,                 // Timeout duration
+//                TimeUnit.SECONDS,   // Unit of timeout
+//                this,               // Activity (for callback binding)
+//                mCallbacks);        // OnVerificationStateChangedCallbacks
+//
+//    }
+//    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+//        @Override
+//        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+//            code = phoneAuthCredential.getSmsCode();
+//            if (code != null) {
+//                verifyET.setText(code);
+//                verify(code);
+//            }}
+//
+//        }
+
+    }
