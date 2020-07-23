@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,8 @@ public class DashBoard extends Fragment implements View.OnClickListener {
     private SharedPreferences loginPreferences;
     private SharedPreferences.Editor loginPrefsEditor;
     private FirebaseAuth mAuth;
+    public static String adminEmail = "golamkibria.java@gmail.com";
+    public static String adminPassword = "admin123";
 
 
     public DashBoard() {
@@ -81,40 +84,32 @@ public class DashBoard extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        String email = phone.getText().toString().trim();
+        String passwords = password.getText().toString().trim();
 
         if (v.getId() == R.id.login) {
-            String userPhone = phone.getText().toString();
-            String userPassword = password.getText().toString();
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                phone.setError("your email address is not correct please enter new email address");
+                phone.requestFocus();
 
-
+                return;
+            }
+            if (passwords.isEmpty()) {
+                password.setError("Incorrect Password");
+                password.requestFocus();
+                return;
+            }
+            if (email.equals(adminEmail) && passwords.equals(adminPassword)) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction()
                         .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil.changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
                 transaction.replace(R.id.fragment, new AdminWelcome(), "mm").addToBackStack(null).commit();
 
+            } else {
+                Toast.makeText(getContext(), "Email or Password is wrong ", Toast.LENGTH_LONG).show();
+                password.setText("");
+            }
 
         }
-
-//            if (userPassword.isEmpty() || userPassword.length() <= 8) {
-//                password.setError("Must have 9 character");
-//                password.requestFocus();
-//            }
-//            if (userPhone.length() != 11 || userPhone.isEmpty() || !userPhone.startsWith("01")) {
-//                phone.setError("Must have 11 charecter");
-//                phone.requestFocus();
-//            }
-            //connect to firebase
-
-//            mAuth.signInWithEmailAndPassword(userPhone, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                @Override
-//                public void onComplete(@NonNull Task<AuthResult> task) {
-//                    if (task.isSuccessful()) {
-//                        Toast.makeText(getContext(), "signIn Successful", Toast.LENGTH_LONG).show();
-//                    } else {
-//                        Toast.makeText(getContext(), "signIn unsuccesfull", Toast.LENGTH_LONG).show();
-//                    }
-//                }
-//            });
-
         if (v.getId() == R.id.resister) {
             FragmentTransaction transaction = getFragmentManager().beginTransaction()
                     .setCustomAnimations(UseUtil.changeFragmentAnimation1st, UseUtil.changeFragmentAnimation2nd, UseUtil.changeFragmentAnimation3rd, UseUtil.changeFragmentAnimation4th);
@@ -122,3 +117,4 @@ public class DashBoard extends Fragment implements View.OnClickListener {
         }
     }
 }
+

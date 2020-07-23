@@ -15,4 +15,6 @@
     <string name="categories">Categories</string>
     <string name="brands">Brands</string>
     <string name="shops">Shops</string>
+    <string name="adminEmail">golamkibria.java@gmail.com</string>
+    <string name="adminPassword">admin123</string>
 </resources>

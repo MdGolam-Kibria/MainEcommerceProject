@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "817015809369",
-    "firebase_url": "https://mainecommarceapp.firebaseio.com",
-    "project_id": "mainecommarceapp",
-    "storage_bucket": "mainecommarceapp.appspot.com"
+    "project_number": "871183138899",
+    "firebase_url": "https://ecommerceevally.firebaseio.com",
+    "project_id": "ecommerceevally",
+    "storage_bucket": "ecommerceevally.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:817015809369:android:4e671e58fd55ea35099848",
+        "mobilesdk_app_id": "1:871183138899:android:043c3a74e4fe1f1096c6a6",
         "android_client_info": {
           "package_name": "com.example.fragmentinsidefragmentpractice"
         }
       },
       "oauth_client": [
         {
-          "client_id": "817015809369-er5ns24n279dp4g88inv68len48gdui5.apps.googleusercontent.com",
+          "client_id": "871183138899-rph7sc8ne4q1nqeqklb887duhg4ifrm8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9zI80jN7NpF7e95vrqfigd3HCEtx4rGQ"
+          "current_key": "AIzaSyC-0Dbtiwpx2Rat2mKT8Hpu9ipgPMlpd90"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "817015809369-er5ns24n279dp4g88inv68len48gdui5.apps.googleusercontent.com",
+              "client_id": "871183138899-rph7sc8ne4q1nqeqklb887duhg4ifrm8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

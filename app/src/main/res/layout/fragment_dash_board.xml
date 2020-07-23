@@ -46,7 +46,7 @@
                 android:backgroundTint="#92000000"
                 android:hint="Phone"
                 android:imeOptions="actionNext"
-                android:inputType="number"
+                android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
                 android:textColorHint="#4D5151" />
 
