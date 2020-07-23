@@ -84,13 +84,38 @@
         app:cornerRadius="15dp">
 
         <EditText
-            android:id="@+id/invitationCode"
+            android:id="@+id/emailEt"
             android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
             android:background="@drawable/foredittext"
-            android:hint="Invitation Code"
+            android:hint="Email"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#4D5151"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
+
+        <EditText
+            android:id="@+id/passwordEt"
+            android:imeOptions="actionNext"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:background="@drawable/foredittext"
+            android:hint="Password"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:backgroundTint="#92000000"
@@ -99,15 +124,33 @@
             android:paddingBottom="5dp" />
     </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Leave empty if you don't have invitation code"
-        android:textSize="18dp"
-        android:layout_marginTop="15dp"
-        android:textStyle="bold"
-        android:textColor="@color/black" />
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
+
+        <EditText
+            android:id="@+id/location"
+            android:imeOptions="actionNext"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:background="@drawable/foredittext"
+            android:hint="Location"
+            android:padding="22dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:backgroundTint="#92000000"
+            android:textColorHint="#4D5151"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
     <CheckBox
         android:id="@+id/saveLoginCheckBox"
         android:layout_width="match_parent"
